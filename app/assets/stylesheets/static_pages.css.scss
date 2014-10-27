@@ -3,29 +3,48 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .buttontitle
-{margin-top: -30px;
+{margin-top: -740px;
 margin-left: 10px;
-margin-bottom: 15px;}
+outline-style: solid;
+outline-width: 1px;
+outline-color: #ecf0f1;
+max-width: 140px;
+padding-top: -1px;
+padding-bottom: -1px;
+padding-left: 8px;
+padding-right: 3px;}
 
 .buttontitletwo
 {margin-top: 0px;
 margin-left: 10px;
-margin-bottom: -37px;}
+margin-bottom: -37px;
+outline-style: solid;
+outline-width: 1px;
+outline-color: #ecf0f1;
+max-width: 150px;
+padding-top: -1px;
+padding-bottom: -1px;
+padding-left: 8px;
+padding-right: 3px;}
 
 .customtitle
-{width: 20%;
+{width: 170px;
 }
 
 .widthcontroller
-{max-width: 800px;
-max-height: 1000px;
-margin-left: 300px;
+{max-width: 1200px;
+max-height: 1500px;
 margin-top: 25px;
 }
 
+.widthtest
+{max-width: 800px;}
+
 #latestarticles
 {margin: 0 auto;
-margin-left: 10px;}
+margin-left: 10px;
+margin-top: 15px;
+}
 
 .morebutton
 {width: 90%;
@@ -57,6 +76,13 @@ margin-bottom: 9px;}
 padding-right: 13px;
 }
 
+.articlepos p
+{padding-left: 14px;
+padding-right: 13px;
+margin-bottom: -6px;
+margin-top: -5px;
+}
+
 #latestquestions
 {margin: 0 auto;
 margin-top: 50px;
@@ -64,13 +90,13 @@ margin-left: 10px;
 }
 
 .questionpos
-{background-color: #ecf0f1;
+{background-color: #f1ecf0;
 width: 254px;
 border-radius: 5px;
 padding-bottom: 13px;
 padding-top: 5px;
 margin-right: 9px;
-margin-bottom: 15px;
+margin-bottom: 10px;
 box-shadow: 0px 0px 2px rgba(34,34,34,0.6);}
 
 .questionpos h3
@@ -92,37 +118,10 @@ padding-right: 13px;
 padding-right: 13px;
 margin-top: -7px;}
 
-#latestarticlestwo
-{margin: 0 auto;
-	margin-left: 535px;
-	margin-top: -268px;
-}
-
-.articlepostwo
-{background-color: #f1ecf0;
-	width: 250px;
-	height: 70px;
-	border-radius: 5px;
-	padding-bottom: 13px;
-	padding-top: 5px;
-	margin-right: 290px;
-	margin-bottom: 20px;
-	box-shadow: 0px 0px 2px rgba(34,34,34,0.6);}
-
-.articlepostwo:hover
-{box-shadow: 1px 0px 0px rgba(34,34,34,0.6);
-}
-
-.articlepostwo h4, h5
-{padding-left: 13px;
-padding-right: 13px;
-}
-
 #complaint
-{margin-left: -15px;
-max-width: 300px;
-margin-top: -589px;
-}
+{margin: 0 auto;
+margin-left: 850px;
+max-width: 350px;}
 
 #complaint h4
 {font-family: 'Patua One';
@@ -137,10 +136,11 @@ text-shadow: 2px 2px #c0392b;}
 {width: 90%;}
 
 .form-group
-{padding-left: 25px;
+{
+	padding-left: 25px;
 padding-right: 25px;
 padding-bottom: 9px;
-margin-top: -4px;
+margin-top: 0px;
 outline-style: solid;
 outline-width: 1px;
 outline-color: #ecf0f1;}
@@ -148,23 +148,10 @@ outline-color: #ecf0f1;}
 .form-group:hover
 {box-shadow: 1px 1px 5px rgba(34,34,34,0.9);}
 
-.headline
-{padding-top: 1px;
-padding-bottom: 1px;
-background-color: #ecf0f1;
-max-width: 300px;}
-
-.headlinesignin
-{padding-top: 1px;
-padding-bottom: 1px;
-background-color: #ecf0f1;
-max-width: 300px;
-margin-left: -22px;
-margin-bottom: -7px;}
-
 .Forumbar
-{padding-left: 37px;
-margin-top: -11px;
+{padding-left: 27px;
+padding-top: 1px;
+margin-top: 0px;
 outline-style: solid;
 outline-width: 1px;
 outline-color: #ecf0f1;
@@ -178,5 +165,28 @@ padding-bottom: 7px;}
 {box-shadow: 1px 1px 5px rgba(34,34,34,0.9);}
 
 .form-controlhome
-{width: 57%;
-border-radius: 5px;}
+{width: 80%;
+border-radius: 5px;
+margin-top: 3px;}
+
+.topusertips
+{padding-bottom: 5px;
+margin-bottom: 5px;
+padding-left: 5px;
+padding-top: 5px;
+}
+
+.hotanswers
+{outline-style: solid;
+outline-width: 1px;
+outline-color: #ecf0f1;
+padding-top: 3px;
+margin-top: 16px;
+padding-left: 23px;
+padding-bottom: 7px;}
+
+.hotanswers:hover
+{box-shadow: 1px 1px 5px rgba(34,34,34,0.9);}
+
+.Community-Support
+{margin-bottom: 15px;}

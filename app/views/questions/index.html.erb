@@ -1,4 +1,12 @@
 <% provide(:title, 'All Questions') %>
+
+<div class="articlequestions">
+    <h2>Latest Articles</h2>
+      <% @articles.find(:all, :limit => 5).each do |article| %>
+       <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></p>
+       <% end %>
+    </div>
+
  <div class="Index">
     <h2>Latest Questions</h2>
    <% @questions.each do |question| %>
@@ -30,10 +38,3 @@
 </div>
 
 <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
-
-<div class="articlequestions">
-    <h2>Latest Articles</h2>
-      <% @articles.find(:all, :limit => 5).each do |article| %>
-       <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></p>
-       <% end %>
-    </div>

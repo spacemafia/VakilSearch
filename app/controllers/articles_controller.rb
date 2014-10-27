@@ -10,10 +10,9 @@ class ArticlesController < ApplicationController
 
   def index
   @articles = Article.all
-  @article = current_user.articles.build
-  @user = @article.user if current_user
+  @user = current_user
   @questions = Question.all
-  @question = current_user.questions.build(params[:question_params])
+  @question = current_user.questions.build(params[:question_params]) if signed_in?
   end
 
   def show

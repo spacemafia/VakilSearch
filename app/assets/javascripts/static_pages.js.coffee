@@ -8,11 +8,6 @@ $ ->
     isFitWidth: true
 
 $ ->
-  $('#latestarticlestwo').masonry
-    itemSelector: '.articlepostwo'
-    isFitWidth: true
-
-$ ->
   $('#latestquestions').masonry
     itemSelector: '.questionpos'
     isFitWidth: true

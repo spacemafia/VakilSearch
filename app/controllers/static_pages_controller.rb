@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
     @users = User.all
     @questions = Question.all
     @articles = Article.all
+    @answer = Answer.all
   end
 
   def about
