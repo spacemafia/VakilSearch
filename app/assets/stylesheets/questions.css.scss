@@ -1,0 +1,152 @@
+#showquestion
+    {float: left;}
+
+ .custom
+ 	{width: 78px;
+	}
+
+.sameline
+	{		padding-top: 4px;
+		margin-bottom: -12px;
+	}
+
+.panel-title
+	{width: 700px;
+		text-align: justify;
+	}
+
+textarea
+{width: 161%;
+}
+
+.answerstats
+	{margin-top: 15px;
+		width: 58%;
+	}
+
+.answer
+	{background-color: #ecf0f1;
+		margin-top: 6px;
+		width: 58%;
+		border-radius: 5px;
+	}
+
+.answer p
+	{margin-left: 16px;
+		margin-right: 16px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+
+.answersquestion li
+	{margin-top: 16px;
+		list-style: none;
+		background-color: #f1ecfa;
+		width: 80px;
+		text-indent: 6px;}
+
+.similarquestions
+	{	float: right;
+		position: absolute;
+		margin-left: 750px;
+		margin-top: -25px;
+		max-width: 350px;
+		max-height: 500px;
+		outline-color: #c0392b;
+		outline-width: 2px;
+		outline-style: solid;
+	}
+
+.similarquestions h2
+	{margin-left: 8px;
+		margin-right: 8px;
+		text-indent: 7px;
+	}
+
+.similarquestions p
+	{	margin-left: 19px;
+		margin-right: 16px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+.articlequestions
+	{	float: right;
+		margin-top: -1195px;
+		margin-right: 33px;
+		max-width: 350px;
+		max-height: 300px;
+		outline-color: #c0392b;
+		outline-width: 2px;
+		outline-style: solid;
+	}
+
+.articlequestions h2
+	{margin-left: 28px;
+		margin-right: 28px;
+		text-indent: 7px;
+		text-decoration: underline;
+	}
+
+.articlequestions p
+	{margin-left: 19px;
+		margin-right: 16px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+.taggedquestions
+	{	float: right;
+		position: absolute;
+		margin-left: 873px;
+		margin-top: -350px;
+		max-width: 350px;
+		max-height: 500px;
+		outline-color: #c0392b;
+		outline-width: 2px;
+		outline-style: solid;
+	}
+
+.taggedquestions h2
+	{margin-left: 8px;
+		margin-right: 8px;
+		text-indent: 7px;
+	}
+
+.taggedquestions p
+	{margin-left: 19px;
+		margin-right: 16px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+
+.form-length
+	{width: 100%;}
+
+.tag-box
+	{width: 10%;
+		background-color: blue;}
+
+.askmodal
+	{margin-top: 9px;
+		margin-left: 15px;
+		margin-right: 38px;}
+
+.questionindex
+{width: 58%;
+	background-color: #ecf0f1;
+		margin-top: 6px;
+		border-radius: 5px;
+	}
+
+.questionindex h3
+{padding-top: 7px;
+padding-left: 15px;
+padding-bottom: 7px;
+padding-right: 15px;
+}
+
+.questionform textarea
+{width: 50%;
+margin-bottom: 10px;}

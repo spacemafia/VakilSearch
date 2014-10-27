@@ -1,0 +1,182 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.buttontitle
+{margin-top: -30px;
+margin-left: 10px;
+margin-bottom: 15px;}
+
+.buttontitletwo
+{margin-top: 0px;
+margin-left: 10px;
+margin-bottom: -37px;}
+
+.customtitle
+{width: 20%;
+}
+
+.widthcontroller
+{max-width: 800px;
+max-height: 1000px;
+margin-left: 300px;
+margin-top: 25px;
+}
+
+#latestarticles
+{margin: 0 auto;
+margin-left: 10px;}
+
+.morebutton
+{width: 90%;
+border-radius: 10px;}
+
+.formbutton
+{width: 57%;
+border-radius: 10px;
+color: green;
+margin-top: -9px;
+margin-bottom: 9px;}
+
+.articlepos
+{background-color: #ecf0f1;
+	width: 254px;
+	height: 254px;
+	padding-bottom: 13px;
+	padding-top: 5px;
+	margin-right: 9px;
+	margin-bottom: 15px;
+	box-shadow: 0px 0px 2px rgba(34,34,34,0.6);}
+
+.articlepos:hover
+{box-shadow: 1px 0px 0px rgba(34,34,34,0.1);
+}
+
+.articlepos h3, h5
+{padding-left: 13px;
+padding-right: 13px;
+}
+
+#latestquestions
+{margin: 0 auto;
+margin-top: 50px;
+margin-left: 10px;
+}
+
+.questionpos
+{background-color: #ecf0f1;
+width: 254px;
+border-radius: 5px;
+padding-bottom: 13px;
+padding-top: 5px;
+margin-right: 9px;
+margin-bottom: 15px;
+box-shadow: 0px 0px 2px rgba(34,34,34,0.6);}
+
+.questionpos h3
+{padding-left: 13px;
+padding-right: 13px;
+}
+
+.questionpos:hover
+{box-shadow: 1px 0px 0px rgba(34,34,34,0.1);
+}
+
+.questionpos h3, h5
+{padding-left: 13px;
+padding-right: 13px;
+}
+
+.questionpos p
+{padding-left: 13px;
+padding-right: 13px;
+margin-top: -7px;}
+
+#latestarticlestwo
+{margin: 0 auto;
+	margin-left: 535px;
+	margin-top: -268px;
+}
+
+.articlepostwo
+{background-color: #f1ecf0;
+	width: 250px;
+	height: 70px;
+	border-radius: 5px;
+	padding-bottom: 13px;
+	padding-top: 5px;
+	margin-right: 290px;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 2px rgba(34,34,34,0.6);}
+
+.articlepostwo:hover
+{box-shadow: 1px 0px 0px rgba(34,34,34,0.6);
+}
+
+.articlepostwo h4, h5
+{padding-left: 13px;
+padding-right: 13px;
+}
+
+#complaint
+{margin-left: -15px;
+max-width: 300px;
+margin-top: -589px;
+}
+
+#complaint h4
+{font-family: 'Patua One';
+font-size: 21px;
+text-align: center;
+font-style: italic;
+margin-top: 4px;
+color: white;
+text-shadow: 2px 2px #c0392b;}
+
+#complaintform
+{width: 90%;}
+
+.form-group
+{padding-left: 25px;
+padding-right: 25px;
+padding-bottom: 9px;
+margin-top: -4px;
+outline-style: solid;
+outline-width: 1px;
+outline-color: #ecf0f1;}
+
+.form-group:hover
+{box-shadow: 1px 1px 5px rgba(34,34,34,0.9);}
+
+.headline
+{padding-top: 1px;
+padding-bottom: 1px;
+background-color: #ecf0f1;
+max-width: 300px;}
+
+.headlinesignin
+{padding-top: 1px;
+padding-bottom: 1px;
+background-color: #ecf0f1;
+max-width: 300px;
+margin-left: -22px;
+margin-bottom: -7px;}
+
+.Forumbar
+{padding-left: 37px;
+margin-top: -11px;
+outline-style: solid;
+outline-width: 1px;
+outline-color: #ecf0f1;
+padding-bottom: 7px;}
+
+.Forumbar h3
+{padding-bottom: 7px;
+}
+
+.Forumbar:hover
+{box-shadow: 1px 1px 5px rgba(34,34,34,0.9);}
+
+.form-controlhome
+{width: 57%;
+border-radius: 5px;}

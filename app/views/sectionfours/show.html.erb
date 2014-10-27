@@ -1,0 +1,5 @@
+<li><%= @sectionfour.contentfour %></li>
+<%= @sectionfour.user.name %>
+<%= @sectionfour.votes_for.size %>
+
+<%= link_to 'Upvote', like_article_sectionfour_path, method: :put %>

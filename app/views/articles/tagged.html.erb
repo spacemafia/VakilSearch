@@ -1,0 +1,24 @@
+<% provide(:title, 'All Articles') %>
+<div class="Index">
+    <h2> Latest <%= params[:tag] %> Articles</h2>
+    <% @articles.each do |article| %>
+    <div class="articleindex">
+        <div class="articleimage">
+            <%= image_tag article.image.url(:thumb) %>
+        </div>
+
+        <h3>
+            <%= link_to article.title, article_path(:id => article.id) %>
+        </h3>
+        <h6><%= time_ago_in_words(article.created_at) %> ago </h6>
+        <p><%= article.headingone %></p>
+        <h6><%= pluralize(article.sectionones.count, "comment") %></h6>
+        <p><%= article.headingtwo %></p>
+        <h6><%= pluralize(article.sectiontwos.count, "comment") %></h6>
+        <p><%= article.headingthree %></p>
+        <h6><%= pluralize(article.sectionthrees.count, "comment") %></h6>
+        <p><%= article.headingfour %></p>
+        <h6><%= pluralize(article.sectionfours.count, "comment") %></h6>
+    </div>
+<% end %>
+</div>

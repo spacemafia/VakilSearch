@@ -1,0 +1,97 @@
+<div class="widthcontroller">
+  <div class="buttontitle">
+    <button class="btn btn-success customtitle"><%= link_to "Latest Articles", articles_path %>
+    </button>
+  </div>
+	<div id="latestarticles" class="transitions-enabled">
+		<% @articles.find(:all, :limit => 2).each do |article| %>
+			<div class="articlepos">
+        <%= image_tag article.image.url(:thumb) %>
+				<h3><%= link_to truncate(article.title, :length => 35), article_path(:id => article.id) %></h3>
+			</div>
+			<% end %>
+	</div>
+
+  <div id="latestarticlestwo" class="transitions-enabled">
+    <% @articles.find(:all, :limit => 3, :offset => 3).each do |article| %>
+      <div class="articlepostwo">
+        <h4><%= link_to article.title, article_path(:id => article.id) %></h4>
+      </div>
+      <% end %>
+  </div>
+
+  <div class="buttontitletwo">
+    <button class="btn btn-success customtitle">
+              <%= link_to "Latest Questions", questions_path %>
+    </button>
+  </div>
+	<div id="latestquestions" class="transitions-enabled">
+		<% @questions.find(:all, :limit => 5).each do |question| %>
+			<div class="questionpos">
+				<h3><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %></h3>
+				<h5><%= truncate(question.morecontent, :length => 50) %></h5>
+				<p> <%= time_ago_in_words(question.created_at) %> ago </p>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+	<div id="complaint">
+				<form role="form">
+       <div class="form-group">
+        <label for="complaintform"><h3 class="index">Got a Brand Problem?</h3></label>
+        <input type="name" class="form-control" id="complaintform" placeholder="Let us know with whom">
+        <button type="submit" class="btn btn-primary morebutton"><%= link_to "Resolve my complaint", "http://www.akosha.com", :target => "_blank" %> </button>
+       </div>
+     </form>
+		            <div class="Forumbar">
+                  <% if signed_in? %>
+                    <div class="row">
+                      <h3>Ask a Question</h3>
+                      <aside class="span4">
+                      	<section>
+                          <%= render 'shared/user_info' %>
+                        </section>
+                        <section>
+                          <%= form_for(@question) do |f| %>
+													  <%= render 'shared/error_messages', object: f.object %>
+													  <div class="homepageform">
+													    <%= f.text_area :content, placeholder: "Compose new question...", class: "form-controlhome" %>
+													    <%= f.text_area :morecontent, placeholder: "Got more to add?", class: "form-controlhome" %></br>
+															<%= f.select :tag_list, options_for_select(["Auto", "Finance", "Online Shopping", "Telecom", "Technology", "Travel"]) %></br></br>
+													  	<%= f.submit "Post", class: "btn btn-primary formbutton" %>
+													  </div>
+															<% end %>
+                        </section>
+                      </aside>
+                      <div class="headlinesignin">
+          <h4>show brands who's king again!</h4>
+    </div>
+
+                </div>
+                         <% else %>
+          <div class="Community-Support">
+             <h3>Community Support</h3>
+                  <%= form_for(:session, url: sessions_path) do |f| %>
+                    <%= f.text_field :email %>
+                    <%= f.password_field :password %>
+                    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+                  <% end %>
+                  <h5><%= link_to "Not a member? Sign up", signup_path %> </h5>
+                  </div>
+                      </div>            
+         <div class="headline">
+		  		<h4>show brands who's king again!</h4>
+		</div>
+   </div>
+                  <% end %>
+
+          <div class="Usertally">
+             <h3>Best Users</h3>
+                  <% @users.each do |user| %>
+                    <% if user.answers.sum(:cached_weighted_score) > 0 %> 
+                    <%= user.answers.sum(:cached_weighted_score) %>
+                    <%= user.name %>
+                  <% end %>
+                  <% end %>
+          </div>

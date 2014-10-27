@@ -1,0 +1,91 @@
+<div class="sidebar">
+         <div class="mostpopular">
+           <ul class="nav nav-tabs" role="tablist">
+           <li class="active"><a href="#tab1" data-toggle="tab">Popular Articles</a></li>
+             <li><a href="#tab2" data-toggle="tab">Popular Questions</a></li>
+             </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab1">
+                <div class="popularquestions">
+                <% @questions.each do |question| %>
+                 <% if question.followers.count > 0 %>
+                 <p><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %></br>
+                  <%= pluralize(question.answers.count, "answer") %></p>
+                 <div class="divider">
+                 </div>
+                 <% end %>
+                  <% end %>
+                  </div>
+                  </div>
+                 <div class="tab-pane" id="tab2">
+                  <div class="popularquestions">
+                <% @questions.each do |question| %>
+                 <% if question.followers.count > 0 %>
+                 <p><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
+                 <% end %>
+                  <% end %>
+          </div>
+          </div>
+          </div>
+             <div class="Complaints-Box">
+              <form role="form">
+                <div class="form-group">
+                  <label for="complaintform"><h4 class="index">Complaint Box</h4></label>
+                  <input type="name" class="form-control" id="complaintform" placeholder="Type in the brand name">
+                  <button type="submit" class="btn btn-primary"><%= link_to "Resolve my complaint", "http://www.akosha.com", :target => "_blank" %> </button>
+                </div>
+              </form>
+            </div>
+            <div class="Colour-One">
+            <div class="Forumbar">
+                  <% if signed_in? %>
+                    <div class="row">
+                      <h4>Forum Support</h4>
+                      <aside class="span4">
+                        <section>
+                          <%= render 'shared/user_info' %>
+                        </section>
+                        <section>
+                          <%= render 'shared/question_form' %>
+                        </section>
+                      </aside>
+                </div>
+
+                <% else %>
+          <div class="Community-Support">
+             <h4>Community Support</h4>
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#tab1" data-toggle="tab">Log In</a></li>
+                  <li><a href="#tab2" data-toggle="tab">Sign up</a></li>
+                 </ul>
+                 <div class="tab-content">
+                 <div class="tab-pane active" id="tab1">
+                  <%= form_for(:session, url: sessions_path) do |f| %>
+                    <%= f.text_field :email %>
+                    <%= f.password_field :password %>
+                    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+                  <% end %>
+                 </div>
+                 <div class="tab-pane" id="tab2">
+                    <%= form_for(:user) do |f| %>
+                      <%= f.label :name %>
+                      <%= f.text_field :name %>
+
+                      <%= f.label :email %>
+                      <%= f.text_field :email %>
+
+                      <%= f.label :password %>
+                      <%= f.password_field :password %>
+
+                      <%= f.label :password_confirmation, "Confirmation" %>
+                      <%= f.password_field :password_confirmation %>
+
+                      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+                    <% end %>
+                  </div>
+                  <% end %>
+                  </div>
+</div>                                
+</div>
+</div>
+</div>

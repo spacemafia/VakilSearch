@@ -1,0 +1,46 @@
+<% provide(:title, 'Article Generator') %>
+
+<div class="row">
+<%= form_for Article.new, html: { multipart: true } do |f| %>
+      <%= f.label :title %></br>
+      <%= f.text_field :title %></br>
+
+	    <%= f.label :image %></br>
+  	  <%= f.file_field :image %></br>
+
+      <%= f.label :deck %></br>
+      <%= f.text_field :deck %></br>
+
+      <%= f.label :introduction %></br>
+      <%= f.text_field :introduction %></br>
+
+      <%= f.label :headingone %></br>
+      <%= f.text_field :headingone %></br>
+
+      <%= f.label :bodyone %></br>
+      <%= f.text_field :bodyone %></br>
+
+      <%= f.label :headingtwo %></br>
+      <%= f.text_field :headingtwo %></br>
+
+      <%= f.label :bodytwo %></br>
+      <%= f.text_field :bodytwo %></br>
+
+      <%= f.label :headingthree %></br>
+      <%= f.text_field :headingthree %></br>
+
+      <%= f.label :bodythree %></br>
+      <%= f.text_field :bodythree %></br>
+
+      <%= f.label :headingfour %></br>
+      <%= f.text_field :headingfour %></br>
+
+      <%= f.label :bodyfour %></br>
+      <%= f.text_field :bodyfour %></br>
+
+      <%= f.label :tags %></br>
+      <%= f.text_field :tag_list %></br>
+
+      <%= f.submit "Create article", class: "btn btn-success longbutton" %></br>
+    <% end %>
+  </div>

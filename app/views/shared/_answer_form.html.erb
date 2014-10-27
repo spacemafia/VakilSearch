@@ -1,0 +1,20 @@
+<div class="answerform">
+	<h4>Have an answer?</h4>
+		<% if signed_in? %>
+			<%= form_for([@question, @answer]) do |f| %>
+  		<div class="field">
+    		<%= f.text_area :answer_content, placeholder: "Type it here" %>
+  		</div>
+  			<button class="btn btn-success" type="Submit">
+    			Create
+  			</button>
+			<% end %>
+			<% else %>
+					<%= form_for(:session, url: sessions_path) do |f| %>
+          <div class="field">
+             <%= f.text_area :email %>
+          </div>
+             <%= f.submit "Create", class: "btn btn-success custom" %>
+          <% end %>
+		<% end %>
+</div>

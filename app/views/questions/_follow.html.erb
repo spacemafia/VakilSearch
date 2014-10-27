@@ -1,0 +1,10 @@
+<% if signed_in? && current_user != @question.user %>
+	<%= form_for(current_user.relationships.build(followed_id: @question.id)) do |f| %>
+	  <div><%= f.hidden_field :followed_id %></div>
+	  <%= f.submit "Follow", class: "btn btn-success custom" %>
+	<% end %>
+<% else %>
+<% if current_user.nil? %>
+		<%= link_to "Follow", new_session_path, class: "btn btn-success custom" %> 
+<% end %>
+<% end %>	

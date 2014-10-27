@@ -1,0 +1,31 @@
+<div class="showquestion">
+<%= form_for(:survey) do |f| %>
+<h2>New Survey</h2>
+
+<h4></h4></br>
+      <%= f.select :qone, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
+
+</br>
+      <%= f.select :qtwo, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
+
+</br>
+      <%= f.select :qthree, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
+
+</br>
+      <%= f.select :qfour, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
+
+</br>
+      <%= f.select :qfive, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
+
+</br>
+      <%= f.select :qsix, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
+
+</br>
+      <%= f.select :qseven, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
+
+</br>
+      <%= f.select :qeight, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
+
+      <%= f.submit "Submit survey", class: "btn btn-success" %>
+    <% end %>
+  </div>

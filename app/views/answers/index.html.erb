@@ -1,0 +1,5 @@
+<%= @question.answers.count %>
+    <% @question.answers.each do |answer| %>
+		<%= answer.answer_content %>
+    <%= answer.user.name %>
+<% end %>

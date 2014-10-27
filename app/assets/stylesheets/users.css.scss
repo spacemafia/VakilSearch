@@ -1,0 +1,43 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.followingquestions
+{	position: absolute;
+	margin-left: 590px;
+	margin-top: -5px;
+	}
+
+.userquestionindex
+{
+			margin-top: 6px;
+		}
+
+.userquestionindex h3
+{width: 45%;
+	background-color: #ecf0f1;
+
+	padding-top: 7px;
+padding-left: 15px;
+padding-bottom: 7px;
+padding-right: 15px;
+		border-radius: 15px;
+}
+
+.users
+{margin-left: -39px;}
+
+.followingquestionsindex
+{
+		margin-top: 6px;
+	}
+
+.followingquestionsindex h3
+{width: 45%;
+	padding-top: 7px;
+padding-left: 15px;
+padding-bottom: 7px;
+padding-right: 15px;
+	background-color: #ecf0f1;
+
+}

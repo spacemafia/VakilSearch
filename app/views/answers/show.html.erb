@@ -1,0 +1,5 @@
+<%= @answer.answer_content %>
+<%= @answer.user.name %>
+<%= @answer.votes_for.size %>
+
+<%= link_to 'Upvote', like_question_answer_path, method: :put %>

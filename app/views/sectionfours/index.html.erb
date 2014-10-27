@@ -1,0 +1,7 @@
+<% provide(:title, 'Article Generator') %>
+<ul>
+	<li><%= @article.sectionfours.count %></li>
+    <% @article.sectionfours.each do |sectionfours| %>
+      <li><%= sectionfours.contentfour %></li>
+    </ul>
+<% end %>

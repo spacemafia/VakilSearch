@@ -1,0 +1,5 @@
+<% if current_user.following_question?(@question) %> 
+    <%= render 'unfollow' %>
+		<% else %>
+    <%= render 'follow' %>
+<% end %>

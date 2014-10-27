@@ -1,0 +1,39 @@
+<% provide(:title, 'All Questions') %>
+ <div class="Index">
+    <h2>Latest Questions</h2>
+   <% @questions.each do |question| %>
+   <div class="questionindex">
+      <h3>
+        <%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
+      </h3>
+    </div>
+      <div class="tagquestion">
+        <h5>
+          <% question.tags.any? %>
+            Category:
+          <% question.tags.each do |tag| %>
+          <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+            <% end %>
+        </h5>
+      </div>
+      <p> Created: <%= time_ago_in_words(question.created_at) %> ago,
+      Followers: <%= question.followers.count %>,
+      Answers: <%= question.answers.count %>,
+      Asker: <%= link_to question.user.name, users_showpage_path(:id => question.user.id) %>
+      <% if current_user.admin? && !current_user?(question) %>
+       <%= link_to 'Edit', edit_question_path(question) %>
+       <%= link_to "Delete", question, method: :delete,
+                                        data: { confirm: "You sure?" } %></p>
+       <% end %>
+   <% end %>
+
+</div>
+
+<%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
+
+<div class="articlequestions">
+    <h2>Latest Articles</h2>
+      <% @articles.find(:all, :limit => 5).each do |article| %>
+       <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></p>
+       <% end %>
+    </div>

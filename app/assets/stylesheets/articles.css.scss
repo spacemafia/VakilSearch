@@ -1,0 +1,99 @@
+.field h4
+{color: red;}
+
+.panel-group
+	{width: 750px;}
+
+.panel-group p
+	{color: #070502;}
+
+.panel-group h4
+	{color: #070502;}
+
+.panel-group li
+	{list-style-type: none;}
+
+.articleindex
+{width: 58%;
+	background-color: #ecf0f1;
+		margin-top: 6px;
+		border-radius: 5px;
+		list-style-type: none;
+		padding-bottom: 6px;
+		padding-right: 15px;
+	}
+
+.articleindex h3
+{padding-top: 15px;
+padding-left: 295px;
+padding-bottom: 7px;
+padding-right: 15px;
+}
+
+.articleindex h6
+	{list-style-type: none;
+		padding-left: 295px;}
+
+.articleindex p
+	{padding-left: 295px;}
+
+.tagarticleindex h5
+	{padding-left: 295px;}
+
+.articleimage
+	{position: absolute;
+		padding-left: 15px;
+		padding-top: 15px;
+}
+
+.latestquestions
+	{	float: right;
+		position: relative;
+		margin-top: 30px;
+		margin-right: 35px;
+		max-width: 300px;
+		max-height: 500px;
+		outline-color: #c0392b;
+		outline-width: 2px;
+		outline-style: solid;
+			}
+
+.latestquestions h2
+	{margin-left: 28px;
+		margin-right: 8px;
+		text-indent: 7px;
+		text-decoration: underline;
+	}
+
+.latestquestions p
+	{margin-left: 19px;
+		margin-right: 16px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+.similararticles
+	{	float: right;
+		position: absolute;
+		margin-left: 880px;
+		margin-top: -25px;
+		max-width: 300px;
+		max-height: 500px;
+		outline-color: #c0392b;
+		outline-width: 2px;
+		outline-style: solid;
+	}
+
+.similararticles h2
+	{margin-left: 8px;
+		margin-right: 8px;
+		text-indent: 7px;
+		text-decoration: underline;
+	}
+
+.similararticles p
+	{	margin-left: 19px;
+		margin-right: 16px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
