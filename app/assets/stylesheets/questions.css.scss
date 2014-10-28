@@ -135,20 +135,75 @@ textarea
 		margin-left: 15px;
 		margin-right: 38px;}
 
-.questionindex
-{width: 58%;
-	background-color: #ecf0f1;
-		margin-top: 6px;
-		border-radius: 5px;
+//index//
+
+.indexparent
+{overflow: hidden;}
+
+#questionindex
+{	border: 1px solid #ecf0f1;
+	float:left; 
+  margin-right:20px;
+  width: 700px;
+  height: 150px;
+  padding-bottom: 10px;
 	}
 
-.questionindex h3
+#questionindex:hover
+{box-shadow: 2px 1px 2px rgba(34,34,34,0.1);}
+
+#questionindex h3
 {padding-top: 7px;
 padding-left: 15px;
-padding-bottom: 7px;
 padding-right: 15px;
+}
+
+#questionindex p
+{padding-bottom: 7px;
+	padding-left: 15px; 
 }
 
 .questionform textarea
 {width: 50%;
 margin-bottom: 10px;}
+
+#articlequestionsindex
+	{background-color: white;
+  overflow:hidden;
+  margin:10px;
+  border:2px solid #ccc;
+  min-height:200px;
+  max-width: 400px;
+	}
+
+#articlequestionsindex h2
+	{margin-left: 28px;
+		margin-right: 28px;
+		text-indent: 7px;
+	}
+
+#articlequestionsindex p
+	{margin-left: 28px;
+		margin-right: 16px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+.latestarticles
+{outline-style: solid;
+outline-width: 1px;
+outline-color: #ecf0f1;}
+
+.latestarticles p
+{padding-top: 3px;
+padding-bottom: 3px;}
+
+	@media screen and (max-width: 400px) {
+   #questionindex { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;    
+  }
+}

@@ -1,21 +1,13 @@
 <% provide(:title, 'All Questions') %>
 
-<div class="articlequestions">
-    <h2>Latest Articles</h2>
-      <% @articles.find(:all, :limit => 5).each do |article| %>
-       <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></p>
-       <% end %>
-    </div>
+<div class="indexparent">
 
- <div class="Index">
     <h2>Latest Questions</h2>
    <% @questions.each do |question| %>
-   <div class="questionindex">
+   <div id="questionindex">
       <h3>
         <%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
       </h3>
-    </div>
-      <div class="tagquestion">
         <h5>
           <% question.tags.any? %>
             Category:
@@ -23,7 +15,6 @@
           <%= link_to tag.name, tagged_url(:tag => tag.name) %>
             <% end %>
         </h5>
-      </div>
       <p> Created: <%= time_ago_in_words(question.created_at) %> ago,
       Followers: <%= question.followers.count %>,
       Answers: <%= question.answers.count %>,
@@ -33,8 +24,18 @@
        <%= link_to "Delete", question, method: :delete,
                                         data: { confirm: "You sure?" } %></p>
        <% end %>
+       </div>
    <% end %>
 
-</div>
+<div id="articlequestionsindex">
+    <h2>Latest Articles</h2>
+      <% @articles.find(:all, :limit => 5).each do |article| %>
+      <div class="latestarticles">
+        <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></p>
+      </div>
+       <% end %>
+    </div>
 
+</div>
 <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
+
