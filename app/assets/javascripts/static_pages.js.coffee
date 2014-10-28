@@ -3,6 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  $('#complaints').masonry
+    itemSelector: '.form-groups'
+    isFitWidth: true
+
+$ ->
   $('#latestarticles').masonry
     itemSelector: '.articlepos'
     isFitWidth: true
