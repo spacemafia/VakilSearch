@@ -8,8 +8,8 @@ $ ->
     isFitWidth: true
 
 $ ->
-  $('#latestarticles').masonry
-    itemSelector: '.articlepos'
+  $('#latestarticlestrial').masonry
+    itemSelector: '.articlepostrial'
     isFitWidth: true
 
 $ ->

@@ -2,6 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.widthcontrollertrial
+{	overflow: hidden;
+}
+
+#latestarticlestrial
+{	float: left; 
+  width: 800px;
+  padding-bottom: 10px;
+}
+
+.articlepostrial
+{	width: 250px;
+  padding-bottom: 10px;
+}
+
+#latestarticlestrial p
+{	padding-bottom: 7px;
+}
+
+#complainttrial
+{	background-color: #ecf0f1;
+  overflow:hidden;
+  margin:10px;
+  border:1px solid #ccc;
+  min-height: 200px;
+  height:300px;
+  max-width: 400px;
+}
+
+#complainttrial h2
+{	margin-left: 28px;
+	margin-right: 28px;
+	text-indent: 7px;
+}
+
+#complainttrial p
+{	margin-left: 28px;
+		margin-right: 16px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+}
+
+	@media screen and (max-width: 400px) {
+   #latestarticlestrial { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;    
+  }
+}
+
+//homepagetrial//
+
 #complaints
 {margin: 0 auto;
 margin-top: -730px;

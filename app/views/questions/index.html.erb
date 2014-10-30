@@ -31,7 +31,8 @@
     <h2>Latest Articles</h2>
       <% @articles.find(:all, :limit => 5).each do |article| %>
       <div class="latestarticles">
-        <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></p>
+        <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %>
+          <%= article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count %> Comments</p>
       </div>
        <% end %>
     </div>

@@ -1,71 +1,56 @@
 <% provide(:title, @question.content) %>
-<div id="showquestion" class="transitions-enabled">
-	<div class="tagquestion">
-		<h5>
-		<% @question.tags.any? %>
-		Category:
+<div class="showquestion">
+	<% @question.tags.any? %>
 			<% @question.tags.each do |tag| %>
-			<%= link_to tag.name, tagged_url(:tag => tag.name), class: "btn btn-primary" %>
-		<% end %>
-		</h5>
-	</div>
+			<div id="questionshow">
+					<h5>Category: <%= link_to tag.name, tagged_url(:tag => tag.name), class: "btn btn-primary" %></h5>
+						<% end %>
+					<h2><%= @question.content %></h2>
+					<p><%= @question.morecontent %></p>
+					<h5>Asker: <%= link_to @question.user.name, users_showpage_path(:id => @user.id) %>
+							Followers: <%= render 'followerstats' %></h5>
+			<% if signed_in? %>
+							<%= render 'follow_form' %>
+			<% else %>
+							<%= link_to "Follow", new_session_path, class: "btn btn-success custom" %>
+			<% end %>
+  		<% if current_user?(@question.user) %>
+	       			<%= link_to edit_question_path(@question) do %>
+	       			<span class="glyphicon glyphicon-edit"><span>
+	 		<% end %>
+	       			<%= link_to root_url, method: :delete,
+                            data: { confirm: "You sure?" } do %>
+          		<span class="glyphicon glyphicon-trash"></span>
+	 		<% end %>
+	 		<% end %>
+							<%= render 'shared/answer_form' %>
+							<%= pluralize(@question.answers.count, "answer") %></br></br>
+						  <% @question.answers.each do |answer| %>
+							<%= link_to like_question_answer_path(:question_id => @question.id, :id => answer.id), method: :put do %>
+  	  		    <span class="glyphicon glyphicon-thumbs-up"></span>
+	    <% end %>
+							<%= answer.get_likes.size %>
+							<%= link_to answer.user.name, users_showpage_path(:id => @user.id) %>
+							<%= link_to dislike_question_answer_path(:question_id => @question.id, :id => answer.id), method: :put do %>
+				 			<span class="glyphicon glyphicon-thumbs-down"></span>
+	    <% end %>
+							<%= answer.get_dislikes.size %>
+							<div class="answer">
+								<p><%= answer.answer_content %></p>
+							</div>
+			<% end %>
+		</div>
 
-	<div class="similarquestions">
-		<h2>Related Questions</h2>
-		<% @questions.find(:all, :limit => 16).each do |question| %>
-			<% if question.tag_list == @question.tag_list %>
-			<div class="Similar">
+<div id="relatedtoshowquestion">
+	<h2>Related Questions</h2>
+			<% @question.find_related_on_tags.find(:all, :limit =>5).each do |question| %>
 			<p><%= link_to truncate(question.content, :length => 50), user_question_path(:email => question.user.id, :id => question.id) %>
 				<%= pluralize(question.answers.count, "answer") %></p>
-			</div>
-		<% end %>
-		<% end %>
-	</div>
-
-	<div class="panel-trial">
-		<div class="panel-title">
-			<h2><%= @question.content %></h2>
-			<p><%= @question.morecontent %></p>
-		</div>
-			<h5>Asker: <%= link_to @question.user.name, users_showpage_path(:id => @user.id) %>
-			Followers: <%= render 'followerstats' %></h5>
-		<div class="sameline">
-			<% if signed_in? %>
-			<%= render 'follow_form' %>
-			<% else %>
-			<%= link_to "Follow", new_session_path, class: "btn btn-success custom" %>
+				<%= time_ago_in_words(question.created_at) %>
 			<% end %>
-      <% if current_user?(@question.user) %>
-	       <%= link_to edit_question_path(@question) do %>
-	       <span class="glyphicon glyphicon-edit"><span>
-	       	<% end %>
-	       <%= link_to root_url, method: :delete,
-                            data: { confirm: "You sure?" } do %>
-          <span class="glyphicon glyphicon-trash"></span>
-	      <% end %>
-	       <% end %>
-		</div>
-			<%= render 'shared/answer_form' %>
-	</div>
-
-	<div class="answersquestion">
-			<li><%= pluralize(@question.answers.count, "answer") %></li>
-		  <% @question.answers.each do |answer| %>
-		  <div class="answerstats">
-				<%= link_to like_question_answer_path(:question_id => @question.id, :id => answer.id), method: :put do %>
-  	      <span class="glyphicon glyphicon-thumbs-up"></span>
-	      <% end %>
-				<%= answer.get_likes.size %>
-				<%= link_to answer.user.name, users_showpage_path(:id => @user.id) %>
-				<%= link_to dislike_question_answer_path(:question_id => @question.id, :id => answer.id), method: :put do %>
-				 <span class="glyphicon glyphicon-thumbs-down"></span>
-	      <% end %>
-				<%= answer.get_dislikes.size %>
-			</div>
-			<div class="answer">
-				<p><%= answer.answer_content %></p>
-			</div>
+			<h2>Related Articles</h2>
+			<% Article.tagged_with(@question.tag_list).find(:all, :limit => 5).each do |article| %>
+			<p><%= truncate(article.title, :length => 50) %>
 			<% end %>
-	</div>
-
+</div>
 </div>

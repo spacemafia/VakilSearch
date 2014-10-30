@@ -1,28 +1,60 @@
-#showquestion
-    {float: left;}
+//showpage//
 
- .custom
+.showquestion
+{	overflow: hidden;
+}
+
+#questionshow
+{	float:left; 
+  margin-right:20px;
+  width: 700px;
+  padding-bottom: 10px;
+}
+
+#questionshow p
+{	padding-bottom: 7px;
+}
+
+#relatedtoshowquestion
+{	background-color: #ecf0f1;
+  overflow:hidden;
+  margin:10px;
+  border:1px solid #ccc;
+  min-height:200px;
+  max-width: 400px;
+}
+
+#relatedtoshowquestion h2
+{	margin-left: 28px;
+	margin-right: 28px;
+	text-indent: 7px;
+}
+
+#relatedtoshowquestion p
+{	margin-left: 28px;
+		margin-right: 16px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+}
+
+	@media screen and (max-width: 400px) {
+   #questionshow { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;    
+  }
+}
+
+.custom
  	{width: 78px;
 	}
 
-.sameline
-	{		padding-top: 4px;
-		margin-bottom: -12px;
-	}
-
-.panel-title
-	{width: 700px;
-		text-align: justify;
-	}
-
 textarea
-{width: 161%;
+{
+	width: 161%;
 }
-
-.answerstats
-	{margin-top: 15px;
-		width: 58%;
-	}
 
 .answer
 	{background-color: #ecf0f1;
@@ -44,6 +76,12 @@ textarea
 		background-color: #f1ecfa;
 		width: 80px;
 		text-indent: 6px;}
+
+//showpage//
+.answerstats
+	{margin-top: 15px;
+		width: 58%;
+	}
 
 .similarquestions
 	{	float: right;
@@ -145,7 +183,7 @@ textarea
 	float:left; 
   margin-right:20px;
   width: 700px;
-  height: 150px;
+  max-height: 200px;
   padding-bottom: 10px;
 	}
 
@@ -168,10 +206,10 @@ padding-right: 15px;
 margin-bottom: 10px;}
 
 #articlequestionsindex
-	{background-color: white;
+	{background-color: #ecf0f1;
   overflow:hidden;
   margin:10px;
-  border:2px solid #ccc;
+  border:1px solid #ccc;
   min-height:200px;
   max-width: 400px;
 	}
@@ -190,13 +228,14 @@ margin-bottom: 10px;}
 	}
 
 .latestarticles
-{outline-style: solid;
-outline-width: 1px;
-outline-color: #ecf0f1;}
+{border-top: 1px solid white;}
 
 .latestarticles p
 {padding-top: 3px;
 padding-bottom: 3px;}
+
+#articlequestionsindex:hover
+{box-shadow: 2px 1px 2px rgba(34,34,34,0.5);}
 
 	@media screen and (max-width: 400px) {
    #questionindex { 

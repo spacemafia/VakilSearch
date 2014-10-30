@@ -65,7 +65,7 @@
         <p><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
           <% question.answers.each do |answer| %>
           <% if answer.created_at > @user.updated_at %>
-          <span class="badge"><%= link_to "New", user_question_path(:email => question.user.id, :id => question.id) %></span> </p>
+          <span class="badge"><%= link_to "New Answers", user_question_path(:email => question.user.id, :id => question.id) %></span> </p>
           <% end %>
           <% end %>
           <% end %>
