@@ -3,13 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .widthcontrollertrial
-{	overflow: hidden;
+{overflow: hidden;}
+
+.paddingbutton
+{margin-bottom: -11px;
+color: green;
 }
 
 #latestarticlestrial
 {	float: left; 
   width: 800px;
   padding-bottom: 10px;
+  overflow: hidden;
+  }
+
+#latestarticlestrial p
+{ padding-bottom: 7px;
 }
 
 .articlepostrial
@@ -17,18 +26,25 @@
   padding-bottom: 10px;
 }
 
-#latestarticlestrial p
-{	padding-bottom: 7px;
+.articlepostrialtwo
+{ width: 270px;
+  height: 90px;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #ecf0f1;
 }
+
+div.articlepostrial, div.articlepostrialtwo { float: left; }
 
 #complainttrial
 {	background-color: #ecf0f1;
   overflow:hidden;
+  height: 250px;
   margin:10px;
   border:1px solid #ccc;
-  min-height: 200px;
-  height:300px;
-  max-width: 400px;
+  max-width: 300px;
 }
 
 #complainttrial h2
@@ -52,6 +68,7 @@
     border:0;
     border-bottom:2px solid #000;    
   }
+
 }
 
 //homepagetrial//

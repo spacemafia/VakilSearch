@@ -13,11 +13,7 @@ class UsersController < ApplicationController
     @questions = @user.questions.paginate(page: params[:page], :per_page => 10)
     @question = current_user.questions.build(params[:question_params]) if current_user
     @answer = @user.answers.sum(:cached_weighted_score)
-    @sectionone = @user.sectionones.sum(:cached_weighted_score)
-    @sectiontwo = @user.sectiontwos.sum(:cached_weighted_score)
-    @sectionthree = @user.sectionthrees.sum(:cached_weighted_score)
-    @sectionfour = @user.sectionfours.sum(:cached_weighted_score)
-    @tally = @answer + @sectionone + @sectiontwo + @sectionthree + @sectionfour
+    admin_user = User.find(1)
   end
 
   def new

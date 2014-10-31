@@ -1,14 +1,43 @@
 <div class="widthcontrollertrial">
+  <h4><%= link_to "Latest Articles", articles_path, class: "btn btn-primary paddingbutton" %></h4>
   <div id="latestarticlestrial">
-    <h4><%= link_to "Latest Articles", articles_path %>
-    </h4>
-    <% @articles.find(:all, :limit => 3).each do |article| %>
+    <% @articles.find(:all, :limit => 2).each do |article| %>
         <div class="articlepostrial">
-        <p><%= image_tag article.image.url(:thumb) %></p>
-        <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
+          <p><%= image_tag article.image.url(:thumb) %></p>
+          <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
         </div>
       <% end %>
+    <% @articles.find(:all, :limit => 2, :offset => 2).each do |article| %>
+        <div class="articlepostrialtwo">
+          <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
         </div>
+      <% end %>
+  </div>
+  <div id="complainttrial">
+    <form role="formtrial">
+     <div class="form-grouptrial">
+       <label for="complaintformtrial"><h3 class="indextrial">Got a Brand Problem?</h3></label>
+         <input type="name" class="form-controltrial" id="complaintformtrial" placeholder="Let us know with whom">
+          <button type="submit" class="btn btn-primary morebutton"><%= link_to "Resolve my complaint", "http://www.akosha.com", :target => "_blank" %> </button>
+     </div>
+    </form>
+  </div>
+</div>
+<div class="widthcontrollertrial">
+  <h4><%= link_to "Latest Articles", articles_path, class: "btn btn-primary paddingbutton" %></h4>
+  <div id="latestarticlestrial">
+    <% @articles.find(:all, :limit => 2).each do |article| %>
+        <div class="articlepostrial">
+          <p><%= image_tag article.image.url(:thumb) %></p>
+          <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
+        </div>
+      <% end %>
+    <% @articles.find(:all, :limit => 2, :offset => 2).each do |article| %>
+        <div class="articlepostrialtwo">
+          <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
+        </div>
+      <% end %>
+  </div>
   <div id="complainttrial">
     <form role="formtrial">
      <div class="form-grouptrial">

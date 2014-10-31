@@ -19,7 +19,7 @@
       Followers: <%= question.followers.count %>,
       Answers: <%= question.answers.count %>,
       Asker: <%= link_to question.user.name, users_showpage_path(:id => question.user.id) %>
-      <% if current_user.admin? && !current_user?(question) %>
+      <% if current_user?(question) %>
        <%= link_to 'Edit', edit_question_path(question) %>
        <%= link_to "Delete", question, method: :delete,
                                         data: { confirm: "You sure?" } %></p>

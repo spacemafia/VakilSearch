@@ -2,17 +2,3 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-  $('#complaints').masonry
-    itemSelector: '.form-groups'
-    isFitWidth: true
-
-$ ->
-  $('#latestarticlestrial').masonry
-    itemSelector: '.articlepostrial'
-    isFitWidth: true
-
-$ ->
-  $('#latestquestions').masonry
-    itemSelector: '.questionpos'
-    isFitWidth: true

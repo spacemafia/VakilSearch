@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
    @sectionfour = Sectionfour.new(params[:sectionfour_params])
    @articles = Article.all
    @user = current_user
-   @question = current_user.questions.build(params[:question_params])
+   @question = current_user.questions.build(params[:question_params]) if signed_in?
    @questions = Question.all
    end
 
