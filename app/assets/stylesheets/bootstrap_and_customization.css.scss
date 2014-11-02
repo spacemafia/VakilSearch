@@ -3,7 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
-$navbar-default-bg: #ecf0f1;
+$navbar-default-bg: #f8f8f8;
 $navbar-default-border: none;
 $navbar-default-brand-color: #c0392b;
 $navbar-default-link-hover-color: #c0392b;
@@ -11,7 +11,7 @@ $font-family-sans-serif: 'Patua One', Helvetica, Arial, sans-serif;
 $navbar-height: 60px;
 $navbar-default-link-color: black;
 $body-bg: #ffffff;
-$btn-primary-bg: #ecf0f1;
+$btn-primary-bg: #f8f8f8;
 $btn-primary-color: #070502;
 $dropdown-link-hover-bg: #ecf0f1;
 $headings-font-family: 'Patua One', sans-serif;
@@ -22,7 +22,7 @@ $nav-tabs-border-color: none;
 $nav-tabs-active-link-hover-bg: #2c3e50;
 $nav-link-hover-bg: none;
 $nav-tabs-active-link-hover-border-color: none;
-$link-color: green;
+$link-color: lighten(green, 5%);
 $nav-tabs-active-link-hover-bg: none;
 $nav-tabs-active-link-hover-color: none;
 $text-color: #070502;
