@@ -10,6 +10,8 @@
 border-bottom: 1px;
 border-radius: 0px;
 margin-left: -1px;
+font-family: 'Open Sans';
+font-weight: bold;
 }
 
 .paddingbutton:hover
@@ -48,8 +50,7 @@ padding-top: 8px;
 padding-left: 15px;
 font-size: 26px; 
 margin-top: -87px;
-background-color: #f8f8f8;
-opacity: 1.0;
+background-color: rgba(#fff, .8);
 }
 
 .articlepostrial h4
@@ -60,8 +61,8 @@ opacity: 1.0;
 padding-right: 5px;
 padding-top: 5px;
 margin-top: -10px;
-background-color: #f8f8f8;
-opacity: 0.9;}
+background-color: white;
+opacity: 0.8;}
 
 .articlepostrial h6
 { position: relative;
@@ -78,11 +79,17 @@ opacity: 0.9;}
 
 .tag
 {position: relative;
+  color: #333333;
   margin-left: 16px;
-  padding-right: 7px;
-  padding-left: 7px;
+  padding: 7px;
   border-radius: 10px;
-  color: #f8f8f8;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  outline-color: #c0392b;
+outline-width: 1px;
+outline-style: solid;
+background-color: rgba(#fff, 0.0);
+border: 0px;
  }
 
 .articlepostrialtwo
@@ -92,7 +99,7 @@ opacity: 0.9;}
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #f8f8f8;
+  border: 2px solid #f8f8f8;
 }
 
 .tagtwo
@@ -103,10 +110,11 @@ opacity: 0.9;}
   padding-left: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
-  border-radius: 10px;
-  background-color: #c0392b;
-  color: #f8f8f8;
-  font-size: 13px;
+  border: 1px solid #c0392b;
+  color: #333333;
+  font-size: 10px;
+  font-family: 'Open Sans';
+  font-weight: bold;
  }
 
  .tagtwo:hover
@@ -119,7 +127,7 @@ padding-left: 5px;
 padding-right: 10px;
 font-color: #333333;
 font-size: 17px; 
-margin-top: -5px;
+margin-top: -9px;
 height: 47px;
 }
 
@@ -139,11 +147,12 @@ div.articlepostrial, div.articlepostrialtwo { float: left; }
 
 #complainttrial
 {	overflow:hidden;
-  border-radius: 5px;
   width: 300px;
   height: 305px;
   background-color: #f8f8f8;
   box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+  border-bottom: 2px solid #333333;
+  border-radius: 5px;
 }
 
 #complainttrial h4
@@ -153,14 +162,16 @@ div.articlepostrial, div.articlepostrialtwo { float: left; }
   padding-top: 9px;
   padding-bottom: 9px;
   text-align: center;
-  border-radius: 5px;
-	background-color: #c0392b;
+  background-color: #d9534f;
+  font-family: 'Open Sans';
+  letter-spacing: -1px;
+  font-weight: bold;
 }
 
 #complainttrial h5
 {font-size: 17px;
 text-align: center;
-color: green;
+color: darken(#f8f8f8, 35%);
 }
 
 .colourbar
@@ -170,10 +181,10 @@ color: green;
 {list-style: none;}
 
 #complainttrial p
-{	margin-left: 30px;
+{	margin-left: 35px;
 		margin-top: -6px;
 		padding-bottom: 3px;
-    color: gray;
+    color: darken(#f8f8f8, 25%);
     font-size: 17px;
 }
 
@@ -193,7 +204,6 @@ color: green;
 {list-style: none;
 display: inline;
 font-size: 16px;
-color: gray;
 margin-right: 8px;
 line-height: 37px;
 padding: 5px;
@@ -204,14 +214,19 @@ padding: 5px;
 color: #f8f8f8;
 border-radius: 10px;
 margin-left: 70px;
-background-color: #c0392b;
+background-color: #5cb85c;
 margin-top: -5px;
 }
 
 .morebutton:hover
-{background-color: #c0392b;}
+{background-color: #5cb85c;
+color: #f8f8f8;}
 
-	@media screen and (max-width: 600px) {
+.form-controltrial
+{font-size: 13px;
+font-family: 'Open Sans';}
+
+	@media screen and (max-width: 400px) {
    #latestarticlestrial { 
     float: none;
     margin-right:0;
@@ -256,11 +271,33 @@ margin-top: -5px;
 
    #complainttrial {
     width: 255px;
-    height: 305px;   }
+    height: 185px;   }
+
+  #complainttrial p {
+    margin-left: 23px;
+}
+
+  #complainttrial h4 {
+    font-size: 14px;
+    letter-spacing: 0px;
+}
+
+    .brandlist li
+    {margin-left: -9999px;}
+
+    .morebutton
+    {margin-left: 60px;}
+
+    .form-controltrial
+    {font-size: 11px;}
 
 }
 
 //homepagetrial//
+
+.form-controlhome
+{color: darken(#f8f8f8, 25%);
+font-weight: bold;}
 
 .widthcontrollermiddle
 {overflow: hidden;}
@@ -290,7 +327,7 @@ margin-top: -44px;
   height: 145px;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  background-color: #f8f8f8;
+    border: 2px solid #f8f8f8;
   margin-right: 20px;
 }
 
@@ -303,10 +340,11 @@ margin-top: -44px;
   padding-left: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
-  border-radius: 10px;
-  background-color: #c0392b;
-  color: #f8f8f8;
-  font-size: 13px;
+  border: 1px solid #d9534f;
+  color: black;
+  font-size: 10px;
+  font-family: 'Open Sans';
+  font-weight: bold;
  }
 
  .tagthree:hover
@@ -386,27 +424,41 @@ div.floattest, div.articleposmiddletwo { float: left; }
   background-color: #f8f8f8;
   padding-top: -10px;
   margin-top: -10px;
-    box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+  box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+  border-bottom: 2px solid #333333;
 }
 
 #complaintmiddle h3
-{padding-left: 13px;}
+{ font-size: 18px;
+  color: #f8f8f8;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 11px;
+  padding-top: 5px;
+  padding-bottom: 9px;
+  text-align: center;
+  background-color: #d9534f;
+}
+
 
 #complaintmiddle h4
 { font-size: 18px;
   color: #f8f8f8;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  letter-spacing: -1px;
   margin-top: -19px;
-  padding-top: 9px;
+  padding-top: 5px;
   padding-bottom: 9px;
   text-align: center;
-  border-radius: 5px;
-  background-color: #c0392b;
+  background-color: #d9534f;
 }
 
 #complaintmiddle h5
 {font-size: 17px;
 text-align: center;
-color: green;
+color: darken(#f8f8f8, 25%);
 }
 
 #complaintmiddle h6
@@ -425,8 +477,8 @@ color: green;
 {list-style: none;}
 
 #complaintmiddle p
-{ margin-left: 13px;
-    padding-top: 0px;
+{ margin-left: 12px;
+  margin-top: -13px;
     padding-bottom: 5px;
     color: gray;
     font-size: 15px;
@@ -444,7 +496,24 @@ color: green;
   padding-left: 2px;
   }
 
-  @media screen and (max-width: 600px) {
+  .postbutton
+{margin-left: 83px;
+background-color: #5cb85c;
+}
+
+.homepageform
+{width: 55%;
+padding-left: 10px;}
+
+.homepageformtwo
+{width: 120%;
+  padding-left: 45px;}
+
+.form-controlhome
+{font-family: 'Open Sans';
+font-size: 13px;}
+
+  @media screen and (max-width: 400px) {
    #latestarticlesmiddle { 
     float: none;
     margin-right:0;
@@ -473,14 +542,17 @@ color: green;
     width: 255px;
     height: 305px;
    }
+
+   #complaintmiddle h4
+   {margin-top: -30px;}
+
+   #complaintmiddle h3
+   {margin-top: 0px;}
+
+    .postbutton
+    {margin-left: 67px;}
+
 }
 
 //homepagetrial//
 
-.homepageform
-{width: 55%;
-padding-left: 10px;}
-
-.homepageformtwo
-{width: 120%;
-  padding-left: 45px;}

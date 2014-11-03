@@ -13,14 +13,15 @@
         <div class="articlepostrialtwo">
           <h4 class="tagtwo"><%= article.tag_list %></h4></br></br>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
-          <h5><%= truncate(article.deck, :length => 70) %></h5>
+          <h5><%= truncate(article.deck, :length => 90) %></h5>
         </div>
       <% end %>
   </div>
   <div id="complainttrial">
     <form role="formtrial">
      <div class="form-grouptrial">
-      <h4>Resolving Consumer Complaints</h4>
+      <h4><span class="glyphicon glyphicon-pushpin"></span>
+        CONSUMER COMPLAINTS</h4>
       <h5>10 lakh filed <span class="colourbar">|</span> 61% resolved</h5>
          <input type="name" class="form-controltrial" id="complaintformtrial" placeholder="Which brand have you a complaint against?">
           <p><%= link_to "File now!", "http://www.akosha.com", class: "btn btn-primary morebutton" %></p>
@@ -60,19 +61,16 @@
   </div>
   <div id="complaintmiddle">
          <% if signed_in? %>
-       <h3>Ask a Question</h3>
-        <aside class="span4">
-          <section>
+      <h3><span class="glyphicon glyphicon-plus-sign"></span>
+        ASK A QUESTION</h3></br>
            <p><%= render 'shared/user_info' %></p>
-          </section>
-          <section>
            <%= form_for(@question) do |f| %>
             <h5><%= render 'shared/error_messages', object: f.object %></h5>
           <div class="homepageform">
             <%= f.text_area :content, placeholder: "Compose new question...", class: "form-controlhome" %>
             <%= f.text_area :morecontent, placeholder: "Got more to add?", class: "form-controlhome" %></br>
             <%= f.select :tag_list, options_for_select(["Auto", "Finance", "Online Shopping", "Telecom", "Technology", "Travel"]) %></br></br>
-            <%= f.submit "Post", class: "btn btn-primary" %>
+            <%= f.submit "Post", class: "btn btn-success postbutton" %>
           </div>
     <% end %>
            </section>
@@ -80,8 +78,10 @@
   </div>
     <% else %>
    <div class="Community-Support">
-       <h4>Community Support</h4>
-       <h5>3,221 Users <span class="colourbar">|</span> 23,572 Answers</h5>
+      <h4><span class="glyphicon glyphicon-bullhorn"></span>
+        COMMUNITY SUPPORT
+        </h4>
+       <h5>7,221 Questions <span class="colourbar">|</span> 23,572 Answers</h5>
         <%= form_for(:session, url: sessions_path) do |f| %>
         <div class="homepageformtwo">
         <%= f.label :email, class: "form-controlhome" %></br>
