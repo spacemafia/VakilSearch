@@ -6,16 +6,14 @@
           <h5 class="btn btn-danger tag"><%= article.tag_list %></h5>
           <p><%= link_to image_tag("family.jpg", :alt => "clubmahindra"), article_path(:id => article.id) %></p>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
-          <h4><%= truncate(article.deck, :length => 150) %>
-            <span class="colourred">Posted:</span> <%= time_ago_in_words(article.created_at) %> ago</h4>
+          <h4><%= truncate(article.deck, :length => 150) %></h4>
         </div>
       <% end %>
     <% @articles.find(:all, :limit => 2, :offset => 7).each do |article| %>
         <div class="articlepostrialtwo">
           <h4 class="tagtwo"><%= article.tag_list %></h4></br></br>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
-          <h5><%= truncate(article.deck, :length => 70) %>
-          <span class="colourred">Posted:</span> <%= time_ago_in_words(article.created_at) %> ago</h5>
+          <h5><%= truncate(article.deck, :length => 70) %></h5>
         </div>
       <% end %>
   </div>
@@ -26,7 +24,7 @@
       <h5>10 lakh filed <span class="colourbar">|</span> 61% resolved</h5>
          <input type="name" class="form-controltrial" id="complaintformtrial" placeholder="Which brand have you a complaint against?">
           <p><%= link_to "File now!", "http://www.akosha.com", class: "btn btn-primary morebutton" %></p>
-          <p>350+ brands are active on Akosha</p>
+          <p>350+ brands active on Akosha</p>
           <ul class="brandlist">
           <li><%= image_tag("aircel.jpg", :alt => "Aircel") %></li>
           <li><%= image_tag("groupon.jpg", :alt => "Groupon") %></li>
@@ -65,7 +63,7 @@
        <h3>Ask a Question</h3>
         <aside class="span4">
           <section>
-           <%= render 'shared/user_info' %>
+           <p><%= render 'shared/user_info' %></p>
           </section>
           <section>
            <%= form_for(@question) do |f| %>
@@ -82,13 +80,18 @@
   </div>
     <% else %>
    <div class="Community-Support">
-      <h3>Community Support</h3>
+       <h4>Community Support</h4>
+       <h5>3,221 Users <span class="colourbar">|</span> 23,572 Answers</h5>
         <%= form_for(:session, url: sessions_path) do |f| %>
-        <%= f.text_field :email %>
-        <%= f.password_field :password %>
-        <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+        <div class="homepageformtwo">
+        <%= f.label :email, class: "form-controlhome" %></br>
+        <%= f.text_field :email, class: "form-controlhome" %></br>
+        <%= f.label :password, class: "form-controlhome" %></br>
+        <%= f.password_field :password, class: "form-controlhome" %>
+        <%= f.submit "Sign in", class: "btn btn-success" %>
+      </div>
     <% end %>
-        <h5><%= link_to "Not a member? Sign up", signup_path %> </h5>
+        <h6><%= link_to "Not a member? Sign up", signup_path %> </h6>
    </div>
     <% end %>
   </div>
