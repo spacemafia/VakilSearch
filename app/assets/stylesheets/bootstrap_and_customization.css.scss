@@ -9,7 +9,7 @@ $navbar-default-brand-color: #c0392b;
 $navbar-default-link-hover-color: #c0392b;
 $font-family-sans-serif: 'Patua One', Helvetica, Arial, sans-serif;
 $navbar-height: 60px;
-$navbar-default-link-color: black;
+$navbar-default-link-color: lighten(black, 35%);
 $body-bg: #ffffff;
 $btn-primary-bg: #f8f8f8;
 $btn-primary-color: #070502;
@@ -33,6 +33,9 @@ $pagination-bg: none;
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+.navbar-right
+  {padding-top: 8px;}
+
 .navbar-brand 
     {
       font-family-sans-serif: 'Lato';
@@ -41,6 +44,10 @@ $pagination-bg: none;
 	   margin-bottom: 5px;
       position: relative;
       }
+
+.navbar-default
+{border-radius: 0px;
+box-shadow: 0px 0px 2px rgba(34,34,34,0.6);}
 
 /* latest */
 

@@ -5,16 +5,17 @@
 .widthcontrollertrial
 {overflow: hidden;}
 
-.paddingbutton
+.articlebutton
 {margin-bottom: -10px;
 border-bottom: 1px;
 border-radius: 0px;
 margin-left: -1px;
 font-family: 'Open Sans';
 font-weight: bold;
+color: green;
 }
 
-.paddingbutton:hover
+.articlebutton:hover
 {box-shadow: 0px 0px 0px rgba(34,34,34,0.6);
 background-color: #f8f8f8;}
 
@@ -37,9 +38,6 @@ background-color: #f8f8f8;}
   box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
 }
 
-.colourred
-{color: #c0392b;}
-
 .articlepostrial img
 {width: 100%;
 }
@@ -54,15 +52,16 @@ background-color: rgba(#fff, .8);
 }
 
 .articlepostrial h4
-{font-size: 14px;
+{ 
+  font-size: 14px;
   color: #333333;
   padding-bottom: 6px; 
   padding-left: 15px;
-padding-right: 5px;
-padding-top: 5px;
-margin-top: -10px;
-background-color: white;
-opacity: 0.8;}
+  padding-right: 5px;
+  padding-top: 5px;
+  margin-top: -10px;
+  background-color: white;
+  opacity: 0.8;}
 
 .articlepostrial h6
 { position: relative;
@@ -86,10 +85,10 @@ opacity: 0.8;}
   font-family: 'Open Sans';
   font-weight: bold;
   outline-color: #c0392b;
-outline-width: 1px;
-outline-style: solid;
-background-color: rgba(#fff, 0.0);
-border: 0px;
+  outline-width: 1px;
+  outline-style: solid;
+  background-color: rgba(#fff, 0.0);
+  border: 0px;
  }
 
 .articlepostrialtwo
@@ -171,7 +170,7 @@ div.articlepostrial, div.articlepostrialtwo { float: left; }
 #complainttrial h5
 {font-size: 17px;
 text-align: center;
-color: darken(#f8f8f8, 35%);
+color: lighten(black, 35%);
 }
 
 .colourbar
@@ -184,7 +183,7 @@ color: darken(#f8f8f8, 35%);
 {	margin-left: 35px;
 		margin-top: -6px;
 		padding-bottom: 3px;
-    color: darken(#f8f8f8, 25%);
+    color: lighten(black, 35%);
     font-size: 17px;
 }
 
@@ -329,6 +328,7 @@ margin-top: -44px;
   padding-bottom: 10px;
     border: 2px solid #f8f8f8;
   margin-right: 20px;
+  box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
 }
 
 .tagthree
@@ -378,7 +378,7 @@ margin-top: -5px;
 }
 
 .articleposmiddle:hover
-{box-shadow: 0px 0px 2px rgba(34,34,34,0.6);}
+{box-shadow: 0px 0px 4px rgba(34,34,34,0.6);}
 
 .articleposmiddletwo:hover
 {box-shadow: 0px 0px 2px rgba(34,34,34,0.6);}
@@ -420,7 +420,7 @@ div.floattest, div.articleposmiddletwo { float: left; }
 { overflow:hidden;
   border-radius: 5px;
   width: 300px;
-  height: 305px;
+  height: 310px;
   background-color: #f8f8f8;
   padding-top: -10px;
   margin-top: -10px;
@@ -458,7 +458,7 @@ div.floattest, div.articleposmiddletwo { float: left; }
 #complaintmiddle h5
 {font-size: 17px;
 text-align: center;
-color: darken(#f8f8f8, 25%);
+color: lighten(black, 35%);
 }
 
 #complaintmiddle h6
@@ -480,7 +480,7 @@ color: green;
 { margin-left: 12px;
   margin-top: -13px;
     padding-bottom: 5px;
-    color: gray;
+    color: lighten(black, 35%);
     font-size: 15px;
 }
 
@@ -556,3 +556,86 @@ font-size: 13px;}
 
 //homepagetrial//
 
+.widthcontrollerbottom
+{overflow: hidden;}
+
+.questionbutton
+{margin-bottom: -10px;
+border-bottom: 1px;
+border-radius: 0px;
+margin-left: -1px;
+font-family: 'Open Sans';
+font-weight: bold;
+background-color: white;
+color: #c0392b;
+border: 1px solid #f8f8f8;
+}
+
+.questionbutton:hover
+{background-color: #f8f8f8;
+border: 1px solid #c0392b;}
+
+#latestquestionstrial
+{ float: left; 
+  width: 800px;
+  overflow: hidden;
+  }
+
+.questionpostrial
+{ width: 251px;
+  height: 135px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+  border: 1px solid #f8f8f8;
+}
+
+.tagfour
+{position: relative;
+  float: left;
+  padding-right: 2px;
+  margin-left: 15px;
+  margin-bottom: -39px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  border: 1px solid #d9534f;
+  color: black;
+  font-size: 10px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+ }
+
+ .questionpostrial h4
+{position: relative;
+margin-top: -10px;
+padding-left: 15px;
+font-size: 16px; 
+}
+
+.questionpostrial p
+{font-size: 12px;
+position: relative;
+margin-top: -3px;
+padding-left: 15px;}
+
+#hotanswers
+{ overflow:hidden;
+  width: 300px;
+  height: 305px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+  border-bottom: 2px solid #333333;
+  border-radius: 5px;
+}
+
+  @media screen and (max-width: 400px) {
+   #latestquestionstrial { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+  }
+}
