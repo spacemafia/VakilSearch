@@ -2,9 +2,9 @@
 <div class="showquestion">
 	<% @question.tags.any? %>
 			<% @question.tags.each do |tag| %>
-			<div id="questionshow">
 					<h5>Category: <%= link_to tag.name, tagged_url(:tag => tag.name), class: "btn btn-primary" %></h5>
 						<% end %>
+			<div id="questionshow">
 					<h2><%= @question.content %></h2>
 					<p><%= @question.morecontent %></p>
 					<h5>Asker: <%= link_to @question.user.name, users_showpage_path(:id => @user.id) %>
@@ -42,15 +42,11 @@
 		</div>
 
 <div id="relatedtoshowquestion">
-	<h2>Related Questions</h2>
+	<h2>RELATED QUESTIONS</h2>
 			<% @question.find_related_on_tags.find(:all, :limit =>5).each do |question| %>
-			<p><%= link_to truncate(question.content, :length => 50), user_question_path(:email => question.user.id, :id => question.id) %>
-				<%= pluralize(question.answers.count, "answer") %></p>
-				<%= time_ago_in_words(question.created_at) %>
-			<% end %>
-			<h2>Related Articles</h2>
-			<% Article.tagged_with(@question.tag_list).find(:all, :limit => 5).each do |article| %>
-			<p><%= truncate(article.title, :length => 50) %>
+			<p><%= link_to truncate(question.content, :length => 50), user_question_path(:email => question.user.id, :id => question.id) %></br>
+				<%= pluralize(question.answers.count, "answer") %>
+				<%= time_ago_in_words(question.created_at) %> ago</p>
 			<% end %>
 </div>
 </div>

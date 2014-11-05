@@ -102,19 +102,19 @@
     <% @questions.find(:all, :limit => 12).each do |question| %>
         <div class="questionpostrial">
           <h5 class="tagfour"><%= question.tag_list %></h5></br></br>
-          <h4><%= question.content %></h4>
-          <p><%= link_to truncate(question.morecontent, :length => 45), user_question_path(:email => question.user.id, :id => question.id) %></p>
+          <h4><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %></h4>
+          <h6><%= truncate(question.morecontent, :length => 45) %></h6>
           <p><%= time_ago_in_words(question.created_at) %> ago</p>
         </div>
       <% end %>
   </div>
   <div id="hotanswers">
-        <h3> Top user tips</h3>
+        <h3><span class="glyphicon glyphicon-stats"></span> TOP USER TIPS</h3>
         <% @answer.find(:all, :limit => 5).each do |answer| %>
       <div class="topusertips">
-        <p><%= truncate(answer.answer_content, :length => 50) %>
-        <%= link_to ">>", user_question_path(:email => answer.id, :id => answer.question_id) %>
-        Score: <%= answer.cached_weighted_score %></p>
+        <p><%= link_to truncate(answer.answer_content, :length => 50), user_question_path(:email => answer.id, :id => answer.question_id) %>
+          Score: <%= answer.cached_weighted_score %></p>
+        <h6><%= answer.user.name %></h6>
       </div>
     <% end %>
    </div>

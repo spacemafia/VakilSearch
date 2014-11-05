@@ -6,36 +6,50 @@
 
 #questionshow
 {	float:left; 
-  margin-right:20px;
+  margin-right:110px;
   width: 700px;
   padding-bottom: 10px;
 }
+
+#questionshow h2
+{margin-top: 0px;}
 
 #questionshow p
 {	padding-bottom: 7px;
 }
 
+.button
+{margin-bottom: -30px;}
+
 #relatedtoshowquestion
-{	background-color: #ecf0f1;
-  overflow:hidden;
-  margin:10px;
-  border:1px solid #ccc;
-  min-height:200px;
-  max-width: 400px;
+{ overflow:hidden;
+  width: 300px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+  border-bottom: 2px solid #333333;
+  border-radius: 5px;
 }
 
 #relatedtoshowquestion h2
-{	margin-left: 28px;
-	margin-right: 28px;
-	text-indent: 7px;
+{ font-size: 18px;
+  color: #f8f8f8;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 9px;
+  text-align: center;
+  background-color: #d9534f;
+  margin-bottom: 3px;
 }
 
 #relatedtoshowquestion p
-{	margin-left: 28px;
-		margin-right: 16px;
-		padding-top: 5px;
-		padding-bottom: 5px;
-}
+{padding-left: 15px;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-right: 10px;
+border-bottom: 2px solid white;}
 
 	@media screen and (max-width: 400px) {
    #questionshow { 
@@ -78,6 +92,7 @@ textarea
 		text-indent: 6px;}
 
 //showpage//
+
 .answerstats
 	{margin-top: 15px;
 		width: 58%;
@@ -171,7 +186,7 @@ textarea
 .askmodal
 	{margin-top: 9px;
 		margin-left: 15px;
-		margin-right: 38px;}
+		margin-right: 20px;}
 
 //index//
 
@@ -182,7 +197,7 @@ textarea
 {	border: 1px solid #ecf0f1;
 	float:left; 
   margin-right:20px;
-  width: 700px;
+  width: 800px;
   max-height: 200px;
   padding-bottom: 10px;
 	}
@@ -196,6 +211,11 @@ padding-left: 15px;
 padding-right: 15px;
 }
 
+#questionindex h5
+{padding-left: 15px;
+padding-right: 15px;
+}
+
 #questionindex p
 {padding-bottom: 7px;
 	padding-left: 15px; 
@@ -206,33 +226,43 @@ padding-right: 15px;
 margin-bottom: 10px;}
 
 #articlequestionsindex
-	{background-color: #ecf0f1;
-  overflow:hidden;
-  margin:10px;
-  border:1px solid #ccc;
-  min-height:200px;
-  max-width: 400px;
-	}
+{ overflow:hidden;
+  width: 300px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+  border-bottom: 2px solid #333333;
+  border-radius: 5px;
+}
 
 #articlequestionsindex h2
-	{margin-left: 28px;
-		margin-right: 28px;
-		text-indent: 7px;
-	}
+{ font-size: 18px;
+  color: #f8f8f8;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 9px;
+  text-align: center;
+  background-color: #d9534f;
+  margin-bottom: 3px;
+}
 
 #articlequestionsindex p
-	{margin-left: 28px;
+	{margin-left: 0px;
 		margin-right: 16px;
-		padding-top: 5px;
-		padding-bottom: 5px;
 	}
 
 .latestarticles
-{border-top: 1px solid white;}
+{padding-left: 15px;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-right: 10px;
+border-bottom: 2px solid white;}
 
-.latestarticles p
+.latestarticles h5
 {padding-top: 3px;
-padding-bottom: 3px;}
+}
 
 #articlequestionsindex:hover
 {box-shadow: 2px 1px 2px rgba(34,34,34,0.5);}

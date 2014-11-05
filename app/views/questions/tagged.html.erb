@@ -2,7 +2,7 @@
 
 <div class="indexparent">
 
-    <h2>Latest <%= params[:tag] %></h2>
+    <h2>Latest <%= params[:tag] %> Questions</h2>
    <% @questions.each do |question| %>
    <div id="questionindex">
       <h3>
@@ -19,7 +19,7 @@
       Followers: <%= question.followers.count %>,
       Answers: <%= question.answers.count %>,
       Asker: <%= link_to question.user.name, users_showpage_path(:id => question.user.id) %>
-      <% if current_user.admin? && !current_user?(question) %>
+      <% if current_user?(question) %>
        <%= link_to 'Edit', edit_question_path(question) %>
        <%= link_to "Delete", question, method: :delete,
                                         data: { confirm: "You sure?" } %></p>
@@ -28,11 +28,11 @@
    <% end %>
 
 <div id="articlequestionsindex">
-    <h2>Latest Articles</h2>
+    <h2>LATEST ARTICLES</h2>
       <% @articles.find(:all, :limit => 5).each do |article| %>
       <div class="latestarticles">
-        <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %>
-          <%= article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count %> Comments</p>
+        <h5><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></h5>
+        <p>Comments: <%= article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count %>, Category: <%= article.tag_list %></p>
       </div>
        <% end %>
     </div>
