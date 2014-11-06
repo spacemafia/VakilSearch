@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
   end
 
   def tagged
-  @questions = Question.all
+  @questions = Question.tagged(params[:tag])
   @user = current_user
   if params[:tag].present? 
     @articles = Article.tagged_with(params[:tag])

@@ -4,12 +4,12 @@
     <% @articles.find(:all, :limit => 1, :offset => 5).each do |article| %>
         <div class="articlepostrial">
           <h5 class="btn btn-danger tag"><%= article.tag_list %></h5>
-          <p><%= link_to image_tag("family.jpg", :alt => "clubmahindra"), article_path(:id => article.id) %></p>
+          <h2><%= link_to image_tag("family.jpg", :alt => "clubmahindra"), article_path(:id => article.id) %></h2>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
           <h4><%= truncate(article.deck, :length => 150) %></h4>
         </div>
       <% end %>
-    <% @articles.find(:all, :limit => 2, :offset => 7).each do |article| %>
+    <% @articles.find(:all, :limit => 2, :offset => 4).each do |article| %>
         <div class="articlepostrialtwo">
           <h4 class="tagtwo"><%= article.tag_list %></h4></br></br>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
@@ -24,8 +24,8 @@
         CONSUMER COMPLAINTS</h4>
       <h5>10 lakh filed <span class="colourbar">|</span> 61% resolved</h5>
          <input type="name" class="form-controltrial" id="complaintformtrial" placeholder="Which brand have you a complaint against?">
-          <p><%= link_to "File now!", "http://www.akosha.com", class: "btn btn-primary morebutton" %></p>
-          <p>350+ brands active on Akosha</p>
+          <h5><%= link_to "File now!", "http://www.akosha.com", class: "btn btn-primary morebutton" %></h5>
+          <h5>350+ brands active on Akosha</h5>
           <ul class="brandlist">
           <li><%= image_tag("aircel.jpg", :alt => "Aircel") %></li>
           <li><%= image_tag("groupon.jpg", :alt => "Groupon") %></li>
@@ -63,7 +63,7 @@
          <% if signed_in? %>
       <h3><span class="glyphicon glyphicon-plus-sign"></span>
         ASK A QUESTION</h3></br>
-           <p><%= render 'shared/user_info' %></p>
+           <h6><%= render 'shared/user_info' %></h6>
            <%= form_for(@question) do |f| %>
             <h5><%= render 'shared/error_messages', object: f.object %></h5>
           <div class="homepageform">
@@ -103,8 +103,8 @@
         <div class="questionpostrial">
           <h5 class="tagfour"><%= question.tag_list %></h5></br></br>
           <h4><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %></h4>
-          <h6><%= truncate(question.morecontent, :length => 45) %></h6>
-          <p><%= time_ago_in_words(question.created_at) %> ago</p>
+          <h6><%= truncate(question.morecontent, :length => 90) %></h6>
+          <h3><%= time_ago_in_words(question.created_at) %> ago</h3>
         </div>
       <% end %>
   </div>

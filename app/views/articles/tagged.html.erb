@@ -1,24 +1,31 @@
 <% provide(:title, 'All Articles') %>
-<div class="Index">
-    <h2> Latest <%= params[:tag] %> Articles</h2>
-    <% @articles.each do |article| %>
-    <div class="articleindex">
-        <div class="articleimage">
-            <%= image_tag article.image.url(:thumb) %>
-        </div>
 
-        <h3>
-            <%= link_to article.title, article_path(:id => article.id) %>
-        </h3>
-        <h6><%= time_ago_in_words(article.created_at) %> ago </h6>
-        <p><%= article.headingone %></p>
-        <h6><%= pluralize(article.sectionones.count, "comment") %></h6>
-        <p><%= article.headingtwo %></p>
-        <h6><%= pluralize(article.sectiontwos.count, "comment") %></h6>
-        <p><%= article.headingthree %></p>
-        <h6><%= pluralize(article.sectionthrees.count, "comment") %></h6>
-        <p><%= article.headingfour %></p>
-        <h6><%= pluralize(article.sectionfours.count, "comment") %></h6>
+<div class="articleindexparent">
+
+    <h2> Latest <%= params[:tag] %> Articles</h2>
+    <div id="articlebox">
+        <% @articles.each do |article| %>
+            <div class="articleindex">
+                <h5><%= image_tag article.image.url(:thumb) %></h5>
+                <h2><%= link_to article.title, article_path(:id => article.id) %></h2>
+                <h4 class="articletagtwo"><%= article.tag_list %></h4>
+                <h6><%= time_ago_in_words(article.created_at) %> ago </h6>
+                <h3> <%= article.headingone %> </br>
+                    <%= article.headingtwo %> </br>
+                    <%= article.headingthree %> </br>
+                    <%= article.headingfour %></h3>
+                <p><%= pluralize(article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count, "comment") %></p>
+            </div>
+        <% end %>
     </div>
-<% end %>
+            <div id="latestquestions">
+                <h2>LATEST QUESTIONS</h2>
+                <% @questions.find(:all, :limit => 5).each do |question| %>
+                <div class="questionscontent">
+                    <p><%= link_to truncate(question.content, :length => 50), user_question_path(:email => question.user.id, :id => question.id) %></p>
+                        <h6><%= question.user.name %>
+                        <%= pluralize(question.answers.count, "answers") %></h6>
+                    </div>
+                <% end %>
+            </div>
 </div>

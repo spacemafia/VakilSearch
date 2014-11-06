@@ -25,7 +25,7 @@ background-color: #f8f8f8;}
   overflow: hidden;
   }
 
-#latestarticlestrial p
+#latestarticlestrial h2
 {margin-top: -44px; 
 }
 
@@ -179,8 +179,8 @@ color: lighten(black, 35%);
 #complainttrial li
 {list-style: none;}
 
-#complainttrial p
-{	margin-left: 35px;
+#complainttrial h5
+{	margin-left: 15px;
 		margin-top: -6px;
 		padding-bottom: 3px;
     color: lighten(black, 35%);
@@ -212,7 +212,7 @@ padding: 5px;
 {width: 35%;
 color: #f8f8f8;
 border-radius: 10px;
-margin-left: 70px;
+margin-left: 0px;
 background-color: #5cb85c;
 margin-top: -5px;
 }
@@ -272,8 +272,8 @@ font-family: 'Open Sans';}
     width: 255px;
     height: 185px;   }
 
-  #complainttrial p {
-    margin-left: 23px;
+  #complainttrial h5 {
+    margin-left: 0px;
 }
 
   #complainttrial h4 {
@@ -285,7 +285,7 @@ font-family: 'Open Sans';}
     {margin-left: -9999px;}
 
     .morebutton
-    {margin-left: 60px;}
+    {margin-left: 00px;}
 
     .form-controltrial
     {font-size: 11px;}
@@ -465,6 +465,7 @@ color: lighten(black, 35%);
 {font-size: 13px;
 text-align: center;
 color: green;
+padding-top: 25px;
 }
 
 .Community-Support p
@@ -476,9 +477,8 @@ color: green;
 #complaintmiddle li
 {list-style: none;}
 
-#complaintmiddle p
-{ margin-left: 12px;
-  margin-top: -13px;
+#complaintmiddle h6
+{   margin-top: -13px;
     padding-bottom: 5px;
     color: lighten(black, 35%);
     font-size: 15px;
@@ -625,12 +625,12 @@ padding-left: 15px;
 padding-right: 7px;
 color: #333333;}
 
-.questionpostrial p
+.questionpostrial h3
 {float: right;
   font-size: 9px;
 position: relative;
 margin-top: -3px;
-padding-right: 7px;
+padding-right: 15px;
 color: #c0392b;}
 
 .questionpostrial:hover
@@ -660,11 +660,17 @@ color: #c0392b;}
 }
 
 .topusertips
+{border-bottom: 2px solid white;}
+
+.topusertips h6
+{padding-left: 15px;}
+
+.topusertips p
 {padding-left: 15px;
 padding-top: 5px;
 padding-bottom: 5px;
 padding-right: 10px;
-border-bottom: 2px solid white;}
+}
 
   @media screen and (max-width: 400px) {
    #latestquestionstrial { 
@@ -673,4 +679,7 @@ border-bottom: 2px solid white;}
     width:auto;
     border:0;
   }
+
+  #hotanswers
+  {width: 255px;}
 }
