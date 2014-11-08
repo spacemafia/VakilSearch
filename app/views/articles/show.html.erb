@@ -1,186 +1,213 @@
 <% provide(:title, @article.title) %>
 
-<div class="panel-group" id="accordion">
-  <div class="tagarticle">
+<div class="showarticle">
     <h5>
-    <% @article.tags.any? %>
-    Category:
+      <%= link_to "Articles", articles_path, class: "btn btn-primary" %>
+      <% @article.tags.any? %>
       <% @article.tags.each do |tag| %>
-      <%= link_to tag.name, categorised_url(:tag => tag.name), class: "btn btn-primary" %>
-    <% end %>
+          <%= link_to tag.name, categorised_url(:tag => tag.name), class: "btn btn-primary" %>
+        <% end %> 
     </h5>
-  </div>
-
-    <div class="similararticles">
-    <h2>Related Articles</h2>
-    <% @articles.find(:all, :limit => 16).each do |article| %>
-      <% if article.tag_list == @article.tag_list %>
-      <div class="Similar">
-      <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></p>
+    <div id="articleshow">
+      <div class="openingarticle">
+      <%= image_tag @article.image.url(:medium) %>
+      <h2><%= @article.title %></h2>
+      <h4><%= @article.deck %></h4>
+      <p><%= @article.introduction %></p>
       </div>
-    <% end %>
-    <% end %>
-  </div>
-
-  <h2><%= @article.title %></h2>
-  <%= image_tag @article.image.url(:medium) %>
-  <h4><%= @article.deck %></h4>
-  <p><%= @article.introduction %></p>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          <h5><%= @article.headingone %></h5>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <p><%= @article.bodyone %></p>
-          <%= form_for([@article, @sectionone]) do |f| %>
-            <div class="field">
-              <%= f.text_area :contentone %>
-            </div>
-            <button class="btn btn-success" type="Submit">
-              Create
-            </button></br>
-             <h4><a href="http://www.akosha.com/">Angry? File a complaint instead</a></h4>
-          <% end %>
-          <li><%= pluralize(@article.sectionones.count, "comment") %></li>
-          <% @article.sectionones.each do |sectionone| %>
-          <div class="sectiononestats">
-            <%= link_to like_article_sectionone_path(:article_id => @article.id, :id => sectionone.id), method: :put do %>
-              <span class="glyphicon glyphicon-thumbs-up"></span>
-            <% end %>
-            <%= sectionone.get_likes.size %>
-            <%= link_to dislike_article_sectionone_path(:article_id => @article.id, :id => sectionone.id), method: :put do %>
-              <span class="glyphicon glyphicon-thumbs-down"></span>
-            <% end %>
-            <%= sectionone.get_dislikes.size %>
-          </div>
-          <div class="sectionone">
-            <p><%= sectionone.contentone %><p>
-          </div>
-         <% end %>
-         </div>
+        <div class="articlecontent">
+          <h5>Contents</h5>
+          <li><%= @article.headingone %></li>
+          <li><%= @article.headingtwo %></li>
+          <li><%= @article.headingthree %></li>
+          <li><%= @article.headingfour %></li>
         </div>
-      </div>
-  <div class="panel panel-default">
+    <div class="articlebody">
+      <h5><%= @article.headingone %></h5>
+      <p><%= @article.bodyone %></p>
+    </div>
+ <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          <h5><%= @article.headingtwo %></h5>
+          <h5><%= pluralize(@article.sectionones.count, "comment") %></h5>
         </a>
       </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
-        <p><%= @article.bodytwo %></p>
-          <%= form_for([@article, @sectiontwo]) do |f| %>
-            <div class="field">
-              <%= f.text_area :contenttwo %>
-            </div>
-            <button class="btn btn-success" type="Submit">
+        <div class="answerform">
+          <%= form_for([@article, @sectionone]) do |f| %>
+          <%= f.text_area :contentone %>
+            <button class="btn btn-success rightfloat" type="Submit">
               Create
-            </button></br>
-            <h4><a href="http://www.akosha.com/">Angry? File a complaint instead</a></h4>
-          <% end %>
-          <li><%= pluralize(@article.sectiontwos.count, "comment") %></li>
-          <% @article.sectiontwos.each do |sectiontwo| %>
-          <div class="sectiontwostats">
-            <%= link_to like_article_sectiontwo_path(:article_id => @article.id, :id => sectiontwo.id), method: :put do %>
-              <span class="glyphicon glyphicon-thumbs-up"></span>
-            <% end %>
-            <%= sectiontwo.get_likes.size %>
-            <%= link_to dislike_article_sectiontwo_path(:article_id => @article.id, :id => sectiontwo.id), method: :put do %>
-              <span class="glyphicon glyphicon-thumbs-down"></span>
-            <% end %>
-            <%= sectiontwo.get_dislikes.size %>
-          </div>
-          <div class="sectiontwo">
-            <p><%= sectiontwo.contenttwo %><p>
-          </div>
+            </button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
          <% end %>
+            <% @article.sectionones.each do |sectionone| %>
+                <%= link_to like_article_sectionone_path(:article_id => @article.id, :id => sectionone.id), method: :put do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+                <% end %>
+                <%= sectionone.get_likes.size %>
+                <% if signed_in? %>
+                <%= link_to sectionone.user.name, users_showpage_path(:id => @user.id) %>
+                <% else %>
+                <%= sectionone.user.name %>
+                <% end %>
+                <%= link_to dislike_article_sectionone_path(:article_id => @article.id, :id => sectionone.id), method: :put do %>
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+                <% end %>
+                <%= sectionone.get_dislikes.size %>
+                <div class="articleanswer">
+                  <p><%= sectionone.contentone %><p>
+                </div>
+            <% end %>
+      </div>
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
+      <div class="articlebody">
+      <h5><%= @article.headingtwo %></h5>
+      <p><%= @article.bodytwo %></p>
+    </div>
+ <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          <h5><%= @article.headingthree %></h5>
+          <h5>Comments</h5>
         </a>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
-        <p><%= @article.bodythree %></p>
-          <%= form_for([@article, @sectionthree]) do |f| %>
-            <div class="field">
-              <%= f.text_area :contentthree %>
-            </div>
-            <button class="btn btn-success" type="Submit">
+        <div class="answerform">
+          <%= form_for([@article, @sectiontwo]) do |f| %>
+          <%= f.text_area :contenttwo %>
+            <button class="btn btn-success rightfloat" type="Submit">
               Create
-            </button></br>
-            <h4><a href="http://www.akosha.com/">Angry? File a complaint instead</a></h4>
-          <% end %>
-          <li><%= pluralize(@article.sectionthrees.count, "comment") %></li>
-          <% @article.sectionthrees.each do |sectionthree| %>
-          <div class="sectionthreestats">
-            <%= link_to like_article_sectionthree_path(:article_id => @article.id, :id => sectionthree.id), method: :put do %>
-              <span class="glyphicon glyphicon-thumbs-up"></span>
-            <% end %>
-            <%= sectionthree.get_likes.size %>
-            <%= link_to dislike_article_sectionthree_path(:article_id => @article.id, :id => sectionthree.id), method: :put do %>
-              <span class="glyphicon glyphicon-thumbs-down"></span>
-            <% end %>
-            <%= sectionthree.get_dislikes.size %>
-          </div>
-          <div class="sectionthree">
-            <p><%= sectionthree.contentthree %><p>
-          </div>
+            </button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button>
          <% end %>
+            <li><%= pluralize(@article.sectiontwos.count, "comment") %></li></br></br>
+            <% @article.sectiontwos.each do |sectiontwo| %>
+                <%= link_to like_article_sectiontwo_path(:article_id => @article.id, :id => sectiontwo.id), method: :put do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+                <% end %>
+                <%= sectiontwo.get_likes.size %>
+                <% if signed_in? %>
+                <%= link_to sectiontwo.user.name, users_showpage_path(:id => @user.id) %>
+                <% else %>
+                <%= sectiontwo.user.name %>
+                <% end %>
+                <%= link_to dislike_article_sectiontwo_path(:article_id => @article.id, :id => sectiontwo.id), method: :put do %>
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+                <% end %>
+                <%= sectiontwo.get_dislikes.size %>
+                <div class="articleanswer">
+                  <p><%= sectiontwo.contentone %><p>
+                </div>
+            <% end %>
+      </div>
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
+      <div class="articlebody">
+      <h5><%= @article.headingthree %></h5>
+      <p><%= @article.bodythree %></p>
+    </div>
+ <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-          <h5><%= @article.headingfour %></h5>
+          <h5>Comments</h5>
         </a>
       </h4>
     </div>
     <div id="collapseFour" class="panel-collapse collapse">
       <div class="panel-body">
-        <p><%= @article.bodyfour %></p>
-          <%= form_for([@article, @sectionfour]) do |f| %>
-            <div class="field">
-              <%= f.text_area :contentfour %>
-            </div>
-            <button class="btn btn-success" type="Submit">
+        <div class="answerform">
+          <%= form_for([@article, @sectionthree]) do |f| %>
+          <%= f.text_area :contentthree %>
+            <button class="btn btn-success rightfloat" type="Submit">
               Create
             </button>
-          <% end %></br>
-          <h4><a href="http://www.akosha.com/">Angry? File a complaint instead</a></h4>
-          <li><%= pluralize(@article.sectionfours.count, "comment") %></li>
-          <% @article.sectionfours.each do |sectionfour| %>
-          <div class="sectionfourstats">
-            <%= link_to like_article_sectionfour_path(:article_id => @article.id, :id => sectionfour.id), method: :put do %>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button>
+         <% end %>
+            <li><%= pluralize(@article.sectionthrees.count, "comment") %></li></br></br>
+            <% @article.sectionthrees.each do |sectionthree| %>
+                <%= link_to like_article_sectionthree_path(:article_id => @article.id, :id => sectionthree.id), method: :put do %>
               <span class="glyphicon glyphicon-thumbs-up"></span>
+                <% end %>
+                <%= sectionthree.get_likes.size %>
+                <% if signed_in? %>
+                <%= link_to sectionthree.user.name, users_showpage_path(:id => @user.id) %>
+                <% else %>
+                <%= sectionthree.user.name %>
+                <% end %>
+                <%= link_to dislike_article_sectionthree_path(:article_id => @article.id, :id => sectionthree.id), method: :put do %>
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+                <% end %>
+                <%= sectionthree.get_dislikes.size %>
+                <div class="articleanswer">
+                  <p><%= sectionthree.contentone %><p>
+                </div>
             <% end %>
-            <%= sectionfour.get_likes.size %>
-            <%= link_to dislike_article_sectionfour_path(:article_id => @article.id, :id => sectionfour.id), method: :put do %>
-              <span class="glyphicon glyphicon-thumbs-down"></span>
-            <% end %>
-            <%= sectionfour.get_dislikes.size %>
-          </div>
-          <div class="sectionfour">
-            <p><%= sectionfour.contentfour %><p>
-          </div>
-           <% end %>
+      </div>
       </div>
     </div>
   </div>
+      <div class="articlebody">
+      <h5><%= @article.headingfour %></h5>
+      <p><%= @article.bodyfour %></p>
+    </div>
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+          <h5>Comments</h5>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="answerform">
+          <%= form_for([@article, @sectionfour]) do |f| %>
+          <%= f.text_area :contentfour %>
+            <button class="btn btn-success rightfloat" type="Submit">
+              Create
+            </button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button>
+         <% end %>
+            <li><%= pluralize(@article.sectionfours.count, "comment") %></li></br></br>
+            <% @article.sectionfours.each do |sectionfour| %>
+                <%= link_to like_article_sectionfour_path(:article_id => @article.id, :id => sectionfour.id), method: :put do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+                <% end %>
+                <%= sectionfour.get_likes.size %>
+                <% if signed_in? %>
+                <%= link_to sectionfour.user.name, users_showpage_path(:id => @user.id) %>
+                <% else %>
+                <%= sectionfour.user.name %>
+                <% end %>
+                <%= link_to dislike_article_sectionfour_path(:article_id => @article.id, :id => sectionfour.id), method: :put do %>
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+                <% end %>
+                <%= sectionfour.get_dislikes.size %>
+                <div class="articleanswer">
+                  <p><%= sectionfour.contentone %><p>
+                </div>
+            <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="relatedtoshowarticle">
+  <h2>RELATED ARTICLES</h2>
+      <% @article.find_related_on_tags.find(:all, :limit =>5).each do |article| %>
+      <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></br>
+        <%= pluralize(article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count, "comment") %>
+        <%= time_ago_in_words(article.created_at) %> ago</p>
+      <% end %>
+</div>
 </div>

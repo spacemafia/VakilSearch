@@ -2,7 +2,7 @@
 <div class="showquestion">
 	<% @question.tags.any? %>
 			<% @question.tags.each do |tag| %>
-					<h5>Category: <%= link_to tag.name, tagged_url(:tag => tag.name), class: "btn btn-primary" %></h5>
+					<h5><%= link_to tag.name, tagged_url(:tag => tag.name), class: "btn btn-primary" %></h5>
 						<% end %>
 			<div id="questionshow">
 					<h2><%= @question.content %></h2>

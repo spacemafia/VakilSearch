@@ -65,24 +65,19 @@ border-bottom: 2px solid white;}
  	{width: 78px;
 	}
 
-textarea
-{
-	width: 161%;
-}
-
 .answer
-	{background-color: #ecf0f1;
-		margin-top: 6px;
-		width: 58%;
-		border-radius: 5px;
-	}
+{padding-top: 16px;
+padding-bottom: 16px;
+background-color: #f8f8f8;
+margin-bottom: 10px;
+margin-top: 4px;
+border-radius: 5px;
+max-width: 550px;}
 
 .answer p
-	{margin-left: 16px;
-		margin-right: 16px;
-		padding-top: 16px;
-		padding-bottom: 16px;
-	}
+  { padding-left: 16px;
+    padding-right: 16px;
+  }
 
 .answersquestion li
 	{margin-top: 16px;
