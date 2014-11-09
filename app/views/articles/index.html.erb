@@ -1,20 +1,25 @@
 <% provide(:title, 'All Articles') %>
 
 <div class="articleindexparent">
-
+            <h2>Latest Articles</h2>
     <div id="articlebox">
-            <h1>Latest Articles</h1>
         <% @articles.each do |article| %>
-            <div class="articleindex">
+            <div class="imageindexone">
                 <%= image_tag article.image.url(:thumb) %>
-                <h2><%= link_to article.title, article_path(:id => article.id) %></h2>
-                <h4><%= article.tag_list %></h4>
-                <h6><%= time_ago_in_words(article.created_at) %> ago </h6>
-                <h3> <%= article.headingone %> </br>
-                    <%= article.headingtwo %> </br>
-                    <%= article.headingthree %> </br>
-                    <%= article.headingfour %></h3>
-                <p><%= pluralize(article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count, "comment") %></p>
+            </div>
+            <div class="articleindexone">
+                <h3><%= link_to article.title, article_path(:id => article.id) %></h3>
+                <h5><% article.tags.any? %>
+                    Category:
+                    <% article.tags.each do |tag| %>
+                    <%= link_to tag.name, categorised_url(:tag => tag.name) %>
+                    <% end %></h5>
+                <h4> <%= article.headingone %></h4>
+                   <h4> <%= article.headingtwo %></h4>
+                    <h4><%= article.headingthree %></h4>
+                    <h4><%= article.headingfour %></h4>
+                <p><%= time_ago_in_words(article.created_at) %> ago
+                <%= pluralize(article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count, "comment") %></p>
             </div>
         <% end %>
     </div>

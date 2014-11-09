@@ -1,66 +1,70 @@
 <% provide(:title, @user.name) %>
-<div class="showquestion">
-      <h2>
-        <%= @user.name %>
-      </h2>
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-  Following
-</button>
+<div class="showuserquestion">
+  <h2><%= @user.name %>'s Questions</h2>
+   <% @questions.each do |question| %>
+      <div id="userquestionindex">
+        <h3><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
+            <% if @user == current_user %>
+            <% question.answers.find(:all, :limit => 1, :order => 'created_at DESC').each do |answer| %>
+            <% if answer.created_at > @user.updated_at %>
+            <span class="badge"><%= link_to "New Answers", user_question_path(:email => question.user.id, :id => question.id) %></span></h3>
+            <% end %>
+            <% end %>
+            <% end %>
+          <% question.tags.any? %>
+          <h5>Category:
+          <% question.tags.each do |tag| %>
+          <%= link_to tag.name, tagged_url(:tag => tag.name) %></h5>
+            <% end %>
+          <p>Created: 
+        <%= time_ago_in_words(question.created_at) %> ago,
+        Answers: <%= question.answers.count %> 
+       <% if current_user?(question) %>
+          <%= link_to 'Edit', edit_question_path(question) %>
+          <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% end %>
+  </div>
+<% end %>
+            
+<% if @user == current_user %>
+<div id="newanswers">
+  <h3><%= @user.name %></h3>
+  <h4><%= pluralize(@user.questions.count, "Questions") %>
+      <%= pluralize(@user.followed_questions.count, "Following") %>
+      <%= pluralize(@user.answers.sum(:cached_weighted_score) + @user.sectionones.sum(:cached_weighted_score) + @user.sectiontwos.sum(:cached_weighted_score) + @user.sectionthrees.sum(:cached_weighted_score) + @user.sectionfours.sum(:cached_weighted_score), "Score") %></h4>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <% @user.followed_questions.each do |question| %>
-      <div class="modal-body">
-        <p><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %></p>
-         </div>
-          <p>Answers: <%= question.answers.count %></p>
-          <% question.answers.each do |answer| %>
-          <% if @user.updated_at <= answer.created_at %> 
-          <%= answer.answer_content %>
-          <% end %>
-          <% end %>
-          <% end %>
-      <div class="modal-footer">
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+    Following
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <% @user.followed_questions.each do |question| %>
+          <div class="modal-body">
+            <p><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
+          </div>
+            <% question.answers.each do |answer| %>
+            <% if answer.created_at > @user.updated_at %>
+            <%= link_to answer.answer_content, user_question_path(:email => answer.id, :id => answer.question_id) %>
+            <span class="badge"><%= link_to "New Answers", user_question_path(:email => question.user.id, :id => question.id) %></span> </p>
+            <% end %>
+            <% end %>
+            <% end %>
+          <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
-  <h3>Questions</h3>
-        <% @questions.each do |question| %>
-
-      <div class="userquestionindex">
-        <h3><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %></h3>
-      </div>
-      <p>
-          <% question.tags.any? %>
-            Category:
-          <% question.tags.each do |tag| %>
-          <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-            <% end %>
-            Created: 
-        <%= time_ago_in_words(question.created_at) %> ago 
-       <% if current_user.admin? && !current_user?(question) %>
-          <%= link_to 'Edit', edit_question_path(question) %>
-          <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %></p>
-
+</div>
+</div>
+</div>
 <% end %>
 <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
-</div>
-
-      <% @user.followed_questions.each do |question| %>
-        <p><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
-          <% question.answers.each do |answer| %>
-          <% if answer.created_at > @user.updated_at %>
-          <span class="badge"><%= link_to "New Answers", user_question_path(:email => question.user.id, :id => question.id) %></span> </p>
-          <% end %>
-          <% end %>
-          <% end %>

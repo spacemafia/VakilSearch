@@ -15,15 +15,15 @@
           <%= link_to tag.name, tagged_url(:tag => tag.name) %>
             <% end %>
         </h5>
-      <p> Created: <%= time_ago_in_words(question.created_at) %> ago,
-      Followers: <%= question.followers.count %>,
-      Answers: <%= question.answers.count %>,
+      <p> <%= time_ago_in_words(question.created_at) %> ago,
+      <%= pluralize(question.followers.count, "Followers") %>,
+      <%= pluralize(question.answers.count, "Answers") %>,
       Asker: <%= link_to question.user.name, users_showpage_path(:id => question.user.id) %>
-      <% if current_user?(question) %>
+      <% if current_user?(question.user) %>
        <%= link_to 'Edit', edit_question_path(question) %>
        <%= link_to "Delete", question, method: :delete,
                                         data: { confirm: "You sure?" } %></p>
-       <% end %>
+        <% end %>
        </div>
    <% end %>
 

@@ -2,45 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.followingquestions
-{	position: absolute;
-	margin-left: 590px;
-	margin-top: -5px;
+.showuserquestion
+{overflow: hidden;}
+
+#userquestionindex
+{	border: 1px solid #ecf0f1;
+	float:left; 
+  margin-right:20px;
+  width: 800px;
+  max-height: 200px;
+  padding-bottom: 10px;
 	}
-
-.userquestionindex
-{
-			margin-top: 6px;
-		}
-
-.userquestionindex h3
-{width: 45%;
-	background-color: #ecf0f1;
-
-	padding-top: 7px;
-padding-left: 15px;
-padding-bottom: 7px;
-padding-right: 15px;
-		border-radius: 15px;
-}
-
-.users
-{margin-left: -39px;}
-
-.followingquestionsindex
-{
-		margin-top: 6px;
-	}
-
-.followingquestionsindex h3
-{width: 45%;
-	padding-top: 7px;
-padding-left: 15px;
-padding-bottom: 7px;
-padding-right: 15px;
-	background-color: #ecf0f1;
-
-}
 
 .badge
 {outline-style: solid;
@@ -48,3 +20,32 @@ outline-width: 2px;
 outline-color: #ecf0f1;
 background-color: white;
 margin-left: 4px;}
+
+#userquestionindex:hover
+{box-shadow: 2px 1px 2px rgba(34,34,34,0.1);}
+
+#userquestionindex h3
+{padding-top: 7px;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+#userquestionindex h5
+{padding-left: 15px;
+padding-right: 15px;
+}
+
+#userquestionindex p
+{padding-bottom: 7px;
+	padding-left: 15px; 
+}
+
+	@media screen and (max-width: 400px) {
+   #userquestionindex { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;    
+  }
+}
