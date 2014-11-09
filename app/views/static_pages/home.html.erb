@@ -1,7 +1,7 @@
 <div class="widthcontrollertrial">
   <h4><%= link_to "Latest Articles", articles_path, class: "btn btn-primary articlebutton" %></h4>
   <div id="latestarticlestrial">
-    <% @articles.find(:all, :limit => 1, :offset => 5).each do |article| %>
+    <% @articles.find(:all, :limit => 1).each do |article| %>
         <div class="articlepostrial">
           <h5 class="btn btn-danger tag"><%= article.tag_list %></h5>
           <h2><%= link_to image_tag("family.jpg", :alt => "clubmahindra"), article_path(:id => article.id) %></h2>
@@ -9,7 +9,7 @@
           <h4><%= truncate(article.deck, :length => 150) %></h4>
         </div>
       <% end %>
-    <% @articles.find(:all, :limit => 2, :offset => 4).each do |article| %>
+    <% @articles.find(:all, :limit => 2, :offset => 1).each do |article| %>
         <div class="articlepostrialtwo">
           <h4 class="tagtwo"><%= article.tag_list %></h4></br></br>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
@@ -41,7 +41,7 @@
 <div class="widthcontrollermiddle">
   <div id="latestarticlesmiddle">
     <div class="floattest">
-    <% @articles.find(:all, :limit => 2, :offset => 4).each do |article| %>
+    <% @articles.find(:all, :limit => 2, :offset => 1).each do |article| %>
         <div class="articleposmiddle">
           <h5 class="tagthree"><%= article.tag_list %></h5></br></br>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
