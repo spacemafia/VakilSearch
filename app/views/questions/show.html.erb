@@ -1,8 +1,9 @@
 <% provide(:title, @question.content) %>
 <div class="showquestion">
+	<h5><%= link_to "Questions", questions_path, class: "btn btn-primary" %>
 	<% @question.tags.any? %>
 			<% @question.tags.each do |tag| %>
-					<h5><%= link_to tag.name, tagged_url(:tag => tag.name), class: "btn btn-primary" %></h5>
+					<%= link_to tag.name, tagged_url(:tag => tag.name), class: "btn btn-primary" %></h5>
 						<% end %>
 			<div id="questionshow">
 					<h2><%= @question.content %></h2>
@@ -35,6 +36,9 @@
 				 			<span class="glyphicon glyphicon-thumbs-down"></span>
 	    <% end %>
 							<%= answer.get_dislikes.size %>
+							<% if answer.liked_by User.find(1) %>
+							<%= "Akosha Approved" %>
+							<% end %>
 							<div class="answer">
 								<p><%= answer.answer_content %></p>
 							</div>
@@ -42,7 +46,7 @@
 		</div>
 
 <div id="relatedtoshowquestion">
-	<h2>RELATED QUESTIONS</h2>
+	<h2>ANSWER TO SCORE</h2>
 			<% @question.find_related_on_tags.find(:all, :limit =>5).each do |question| %>
 			<p><%= link_to truncate(question.content, :length => 50), user_question_path(:email => question.user.id, :id => question.id) %></br>
 				<%= pluralize(question.answers.count, "answer") %>

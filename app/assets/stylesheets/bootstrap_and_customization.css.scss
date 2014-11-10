@@ -36,11 +36,12 @@ $pagination-bg: none;
 a:link
 {text-decoration: none;}
 
-body { padding-top: 90px; }
+body 
+{ padding-top: 90px; }
 
 .navbar-right
   {padding-top: 8px;
-    padding-right: 20px;}
+    padding-right: 33px;}
 
 .navbar-brand 
     {
@@ -50,6 +51,16 @@ body { padding-top: 90px; }
 	   margin-bottom: 5px;
       position: relative;
       }
+
+.modalsign
+{position: fixed;
+  float: right;
+margin-left: 1060px;
+margin-top: -27px;
+}
+
+.modalsign li
+{list-style: none;}
 
 .navbar-default
 { border-radius: 0px;

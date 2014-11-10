@@ -51,7 +51,7 @@
       </div>
         <% if signed_in? %>
         <div class="articleposmiddletwo">
-          <%= link_to image_tag("micromaxsurvey.jpg", :alt => "Micromax Survey"), new_survey_path %>
+          <%= link_to image_tag("micromaxsurvey.jpg", :alt => "Micromax Survey"), surveys_new_path %>
         </div>
           <% else %>
         <div class="articleposmiddletwo">
@@ -90,7 +90,7 @@
         <%= f.password_field :password, class: "form-controlhome" %>
         <%= f.submit "Sign in", class: "btn btn-success" %>
       </div>
-    <% end %>
+    <% end %></br>
         <h6><%= link_to "Not a member? Sign up", signup_path %> </h6>
    </div>
   </div>

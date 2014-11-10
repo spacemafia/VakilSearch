@@ -5,12 +5,14 @@
 .showuserquestion
 {overflow: hidden;}
 
+#questionwidth
+{width: 800px;}
+
 #userquestionindex
 {	border: 1px solid #ecf0f1;
 	float:left; 
   margin-right:20px;
   width: 800px;
-  max-height: 200px;
   padding-bottom: 10px;
 	}
 
@@ -38,6 +40,59 @@ padding-right: 15px;
 #userquestionindex p
 {padding-bottom: 7px;
 	padding-left: 15px; 
+}
+
+.topanswers h4
+{ font-size: 15px;
+  color: #f8f8f8;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 9px;
+  text-align: center;
+  background-color: #d9534f;
+  margin-bottom: 3px;
+}
+
+.topanswers p
+{padding-left: 15px;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-right: 10px;
+border-bottom: 1px solid white;
+}
+
+#newanswers
+{ overflow:hidden;
+  width: 300px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+  border-bottom: 2px solid #333333;
+  border-radius: 5px;
+}
+
+#newanswers h3
+{ font-size: 18px;
+  color: #f8f8f8;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 9px;
+  text-align: center;
+  background-color: #d9534f;
+  margin-bottom: 3px;
+}
+
+#newanswers h4
+{font-size: 15px;
+padding-left: 15px;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-right: 10px;
 }
 
 	@media screen and (max-width: 400px) {

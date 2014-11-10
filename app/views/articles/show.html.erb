@@ -58,6 +58,9 @@
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <% end %>
                 <%= sectionone.get_dislikes.size %>
+                <% if sectionone.liked_by User.find(1) %>
+                  <%= "Akosha Approved" %>
+                  <% end %>
                 <div class="articleanswer">
                   <p><%= sectionone.contentone %><p>
                 </div>
@@ -103,6 +106,9 @@
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <% end %>
                 <%= sectiontwo.get_dislikes.size %>
+                <% if sectiontwo.liked_by User.find(1) %>
+                  <%= "Akosha Approved" %>
+                <% end %>
                 <div class="articleanswer">
                   <p><%= sectiontwo.contentone %><p>
                 </div>
@@ -148,6 +154,9 @@
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <% end %>
                 <%= sectionthree.get_dislikes.size %>
+                <% if sectionthree.liked_by User.find(1) %>
+                  <%= "Akosha Approved" %>
+                <% end %>
                 <div class="articleanswer">
                   <p><%= sectionthree.contentone %><p>
                 </div>
@@ -193,6 +202,9 @@
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <% end %>
                 <%= sectionfour.get_dislikes.size %>
+                <% if sectionfour.liked_by User.find(1) %>
+                  <%= "Akosha Approved" %>
+                <% end %>
                 <div class="articleanswer">
                   <p><%= sectionfour.contentone %><p>
                 </div>
@@ -203,7 +215,7 @@
   </div>
 </div>
 <div id="relatedtoshowarticle">
-  <h2>RELATED ARTICLES</h2>
+  <h2>ANSWER TO SCORE</h2>
       <% @article.find_related_on_tags.find(:all, :limit =>5).each do |article| %>
       <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></br>
         <%= pluralize(article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count, "comment") %>

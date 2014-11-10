@@ -69,6 +69,7 @@ ConsumerTadka::Application.routes.draw do
   match '/sectiontwos/:id', to: 'sectiontwos#show', via: :get, as: :sectiontwos_showpage
   match '/sectionthrees/:id', to: 'sectionthrees#show', via: :get, as: :sectionthrees_showpage
   match '/sectionfours/:id', to: 'sectionfours#show', via: :get, as: :sectionfours_showpage
+  match '/contests/new', to: 'surveys#new', via: :get, as: :surveys_new
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

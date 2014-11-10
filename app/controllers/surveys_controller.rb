@@ -13,6 +13,8 @@ class SurveysController < ApplicationController
   def new
     @survey = current_user.surveys.build
     @user = current_user
+    @questions = Question.all
+    @question = current_user.questions.build if current_user
     end
 
   def edit

@@ -1,31 +1,50 @@
-<div class="showquestion">
+<div class="survey">
+<h2>For The Win</h2>
+<div id="surveybody">
+<h3>The Micromax #TELLUSMORE Contest</h3>
+<%= image_tag("micromaxsurvey.jpg", :alt => "Micromax Survey") %></br></br>
 <%= form_for(:survey) do |f| %>
-<h2>New Survey</h2>
 
-<h4></h4></br>
+<h4>Micromax is looking Micromax is looking Micromax is looking Micromax is looking Micromax is looking </h4>
+
+<h4>What kind</h4>
       <%= f.select :qone, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
 
-</br>
+<h4>What kind</h4>
       <%= f.select :qtwo, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
 
-</br>
+<h4>What kind</h4>
       <%= f.select :qthree, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
 
-</br>
+<h4>What kind</h4>
       <%= f.select :qfour, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
 
-</br>
+<h4>What kind</h4>
       <%= f.select :qfive, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
 
-</br>
+<h4>What kind</h4>
       <%= f.select :qsix, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
 
-</br>
+<h4>What kind</h4>
       <%= f.select :qseven, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
 
-</br>
+<h4>What kind</h4>
       <%= f.select :qeight, options_for_select(["Select One", "Book", "Slash", "Office", "Home", "Other"],:disabled => ["Select One"]) %></br></br>
 
-      <%= f.submit "Submit survey", class: "btn btn-success" %>
+      <%= f.submit "Submit survey", class: "btn btn-success post" %>
     <% end %>
+  </div>
+
+  <div id="surveyquestions">
+                    <h2>ANSWER TO SCORE</h2>
+                <% @questions.find(:all, :limit => 5).each do |question| %>
+                <div class="questionscontent">
+                    <p><%= link_to truncate(question.content, :length => 50), user_question_path(:email => question.user.id, :id => question.id) %></p>
+                        <h6><%= question.user.name %>
+                        <%= pluralize(question.answers.count, "answers") %></h6>
+                    </div>
+                <% end %>
+            </div>
+
+  </div>
   </div>
