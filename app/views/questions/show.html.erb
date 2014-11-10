@@ -7,8 +7,8 @@
 						<% end %>
 			<div id="questionshow">
 					<h2><%= @question.content %></h2>
-					<p><%= @question.morecontent %></p>
-					<h5>Asker: <%= link_to @question.user.name, users_showpage_path(:id => @user.id) %>
+					<h4><%= @question.morecontent %></h4>
+					<h5>Asker: <%= link_to @question.user.name, users_showpage_path(:id => @question.user_id) %>
 							Followers: <%= render 'followerstats' %></h5>
 			<% if signed_in? %>
 							<%= render 'follow_form' %>
@@ -24,21 +24,19 @@
           		<span class="glyphicon glyphicon-trash"></span>
 	 		<% end %>
 	 		<% end %>
-							<%= render 'shared/answer_form' %>
+							<%= render 'shared/answer_form' %></br>
 							<%= pluralize(@question.answers.count, "answer") %></br></br>
 						  <% @question.answers.each do |answer| %>
 							<%= link_to like_question_answer_path(:question_id => @question.id, :id => answer.id), method: :put do %>
   	  		    <span class="glyphicon glyphicon-thumbs-up"></span>
 	    <% end %>
 							<%= answer.get_likes.size %>
-							<%= link_to answer.user.name, users_showpage_path(:id => @user.id) %>
 							<%= link_to dislike_question_answer_path(:question_id => @question.id, :id => answer.id), method: :put do %>
 				 			<span class="glyphicon glyphicon-thumbs-down"></span>
 	    <% end %>
 							<%= answer.get_dislikes.size %>
-							<% if answer.liked_by User.find(1) %>
-							<%= "Akosha Approved" %>
-							<% end %>
+							<%= link_to answer.user.name, users_showpage_path(:id => answer.user_id) %>
+							<%= pluralize(User.find_by(:id => answer.user_id).answers.sum(:cached_weighted_score) + User.find_by(:id => answer.user_id).sectionones.sum(:cached_weighted_score) + User.find_by(:id => answer.user_id).sectiontwos.sum(:cached_weighted_score) + User.find_by(:id => answer.user_id).sectionthrees.sum(:cached_weighted_score) + User.find_by(:id => answer.user_id).sectionfours.sum(:cached_weighted_score), "Total User Point") %>
 							<div class="answer">
 								<p><%= answer.answer_content %></p>
 							</div>

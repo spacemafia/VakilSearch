@@ -63,7 +63,8 @@
          <% if signed_in? %>
       <h3><span class="glyphicon glyphicon-plus-sign"></span>
         ASK A QUESTION</h3></br>
-           <h6><%= render 'shared/user_info' %> following</h6>
+           <h6><%= render 'shared/user_info' %> following 
+           <%= pluralize(User.find_by(:id => current_user.id).answers.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionones.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectiontwos.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionthrees.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionfours.sum(:cached_weighted_score), "Total User Point") %></h6>
            <%= form_for(@question) do |f| %>
             <h5><%= render 'shared/error_messages', object: f.object %></h5>
           <div class="homepageform">

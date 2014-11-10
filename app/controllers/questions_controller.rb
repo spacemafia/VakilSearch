@@ -15,10 +15,10 @@ class QuestionsController < ApplicationController
   end
 
   def show
-   @user = User.find(params[:email])
    @question = Question.find(params[:id])
    @questions = Question.all
    @answer = Answer.new(params[:answer_content])
+   @user = User.find(params[:email])
   end
 
   def create

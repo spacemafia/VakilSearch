@@ -195,11 +195,10 @@ margin-top: -27px;
   /* sidebar */
 
   footer {
-  position: relative;
+  overflow: hidden;
   margin-top: 250px;
-  padding-top: 50px;
   border-top: 1px solid #eaeaea;
-  color: #999;
+  color: #f8f8f8;
 }
 
 footer a {
@@ -212,16 +211,49 @@ footer a:hover {
 
 footer small {
   float: left;
+  width: 930px;
 }
 
-footer ul {
-  float: right;
-  list-style: none;
+  #footerleft p
+  {font-size: 14px;
+    margin-left: 105px;}
+
+#footerleft h5
+{margin-left: 105px;}
+
+#footerright {
+  overflow: hidden;
+    width: 300px;
+    float: right;
 }
 
 footer ul li {
-  float: left;
+  list-style: none;
+  display: inline;
   margin-left: 10px;
+}
+
+  @media screen and (max-width: 400px) {
+   #footerleft { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    margin-left: 18px;
+  }
+
+  #footerleft p
+  {font-size: 14px;
+    margin-left: 18px;}
+
+  #footerleft h5
+  {margin-left: 18px;
+    margin-bottom: -7px;}
+
+  #footerright {
+    float: left;
+    margin-left: -30px;
+  }
 }
 
 $grayMediumLight: #eaeaea;

@@ -58,9 +58,7 @@
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <% end %>
                 <%= sectionone.get_dislikes.size %>
-                <% if sectionone.liked_by User.find(1) %>
-                  <%= "Akosha Approved" %>
-                  <% end %>
+                <%= pluralize(User.find_by(:id => sectionone.user_id).answers.sum(:cached_weighted_score) + User.find_by(:id => sectionone.user_id).sectionones.sum(:cached_weighted_score) + User.find_by(:id => sectionone.user_id).sectiontwos.sum(:cached_weighted_score) + User.find_by(:id => sectionone.user_id).sectionthrees.sum(:cached_weighted_score) + User.find_by(:id => sectionone.user_id).sectionfours.sum(:cached_weighted_score), "Total User Point") %>
                 <div class="articleanswer">
                   <p><%= sectionone.contentone %><p>
                 </div>
@@ -106,11 +104,9 @@
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <% end %>
                 <%= sectiontwo.get_dislikes.size %>
-                <% if sectiontwo.liked_by User.find(1) %>
-                  <%= "Akosha Approved" %>
-                <% end %>
+                <%= pluralize(User.find_by(:id => sectiontwo.user_id).answers.sum(:cached_weighted_score) + User.find_by(:id => sectiontwo.user_id).sectionones.sum(:cached_weighted_score) + User.find_by(:id => sectiontwo.user_id).sectiontwos.sum(:cached_weighted_score) + User.find_by(:id => sectiontwo.user_id).sectionthrees.sum(:cached_weighted_score) + User.find_by(:id => sectiontwo.user_id).sectionfours.sum(:cached_weighted_score), "Total User Point") %>
                 <div class="articleanswer">
-                  <p><%= sectiontwo.contentone %><p>
+                  <p><%= sectiontwo.contenttwo %><p>
                 </div>
             <% end %>
       </div>
@@ -154,11 +150,9 @@
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <% end %>
                 <%= sectionthree.get_dislikes.size %>
-                <% if sectionthree.liked_by User.find(1) %>
-                  <%= "Akosha Approved" %>
-                <% end %>
+                <%= pluralize(User.find_by(:id => sectionthree.user_id).answers.sum(:cached_weighted_score) + User.find_by(:id => sectionthree.user_id).sectionones.sum(:cached_weighted_score) + User.find_by(:id => sectionthree.user_id).sectiontwos.sum(:cached_weighted_score) + User.find_by(:id => sectionthree.user_id).sectionthrees.sum(:cached_weighted_score) + User.find_by(:id => sectionthree.user_id).sectionfours.sum(:cached_weighted_score), "Total User Point") %>
                 <div class="articleanswer">
-                  <p><%= sectionthree.contentone %><p>
+                  <p><%= sectionthree.contentthree %><p>
                 </div>
             <% end %>
       </div>
@@ -202,11 +196,9 @@
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <% end %>
                 <%= sectionfour.get_dislikes.size %>
-                <% if sectionfour.liked_by User.find(1) %>
-                  <%= "Akosha Approved" %>
-                <% end %>
+                <%= pluralize(User.find_by(:id => sectionfour.user_id).answers.sum(:cached_weighted_score) + User.find_by(:id => sectionfour.user_id).sectionones.sum(:cached_weighted_score) + User.find_by(:id => sectionfour.user_id).sectiontwos.sum(:cached_weighted_score) + User.find_by(:id => sectionfour.user_id).sectionthrees.sum(:cached_weighted_score) + User.find_by(:id => sectionfour.user_id).sectionfours.sum(:cached_weighted_score), "Total User Point") %>
                 <div class="articleanswer">
-                  <p><%= sectionfour.contentone %><p>
+                  <p><%= sectionfour.contentfour %><p>
                 </div>
             <% end %>
       </div>
