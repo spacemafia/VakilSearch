@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111094002) do
+ActiveRecord::Schema.define(version: 20141111100802) do
 
   create_table "answers", force: true do |t|
     t.string   "answer_content"
@@ -39,18 +39,18 @@ ActiveRecord::Schema.define(version: 20141111094002) do
   create_table "articles", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.string   "introduction"
+    t.text     "introduction"
     t.string   "deck"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "headingone"
-    t.string   "bodyone"
+    t.text     "bodyone"
     t.string   "headingtwo"
-    t.string   "bodytwo"
+    t.text     "bodytwo"
     t.string   "headingthree"
-    t.string   "bodythree"
+    t.text     "bodythree"
     t.string   "headingfour"
-    t.string   "bodyfour"
+    t.text     "bodyfour"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
