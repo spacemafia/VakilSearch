@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :introduction, :deck, :image, :tag_list, :headingone,
                                       :headingtwo, :headingthree, :headingfour, :bodyone, :bodytwo,
-                                      :bodythree, :bodyfour)
+                                      :bodythree, :bodyfour, :bodyfive)
   end
 
   def admin_user
