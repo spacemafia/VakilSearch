@@ -46,6 +46,7 @@ background-color: #f8f8f8;}
 {position: relative;
 padding-top: 8px;
 padding-left: 15px;
+margin-bottom: 7px;
 font-size: 26px; 
 margin-top: -87px;
 background-color: rgba(#fff, .8);
@@ -92,6 +93,9 @@ background-color: rgba(#fff, .8);
   border: 0px;
  }
 
+ .tag:hover
+ {background-color: transparent;}
+
 .articlepostrialtwo
 { width: 255px;
   height: 150px;
@@ -118,7 +122,7 @@ background-color: rgba(#fff, .8);
  }
 
  .tagtwo:hover
- {background-color: #c0392b;}
+ {background-color: transparent;}
 
 .articlepostrialtwo h3
 {
@@ -256,7 +260,7 @@ font-family: 'Open Sans';}
     margin-top: -10px;
     width: 253px;
     padding-left: 15px;
-    padding-bottom: 9px;
+    padding-bottom: 6px;
     background-color: #f8f8f8;
     font-size: 21px;
   }
@@ -265,9 +269,9 @@ font-family: 'Open Sans';}
     width: 253px;
     padding-left: 15px;
     background-color: #f8f8f8;
-    padding-top: 4px;
-    padding-bottom: 9px;
-    margin-top: -11px;
+    padding-top: 1px;
+    padding-bottom: 6px;
+    margin-top: -7px;
   }
 
    #complainttrial {
@@ -350,7 +354,7 @@ margin-top: -44px;
  }
 
  .tagthree:hover
- {background-color: #c0392b;}
+ {background-color: transparent;}
 
 .articleposmiddle h3
 {padding-top: 8px;
@@ -605,7 +609,6 @@ border: 1px solid white;}
   padding-bottom: 2px;
   padding-top: 2px;
   border: 1px solid #d9534f;
-  color: black;
   font-size: 10px;
   font-family: 'Open Sans';
   font-weight: bold;
@@ -618,6 +621,10 @@ padding-left: 15px;
 padding-right: 7px;
 font-size: 16px; 
 }
+
+.questionpostrial h4 a
+{color: #c0392b;}
+
 
 .questionpostrial h6
 {font-size: 12px;
