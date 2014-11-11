@@ -37,13 +37,23 @@
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
         <div class="answerform">
-          <%= form_for([@article, @sectionone]) do |f| %>
+          <% if signed_in? %>
+        <%= form_for([@article, @sectionone]) do |f| %>
           <%= f.text_area :contentone %>
             <button class="btn btn-success rightfloat" type="Submit">
               Create
             </button>
             <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
          <% end %>
+          <% else %>
+          <%= form_for([@article, @sectionone]) do |f| %>
+          <%= f.text_area :contentone %>
+          <button class="btn btn-success rightfloats" type="Submit"><%=
+              link_to "Create", new_session_path, :style => "color: #ffffff" %>
+            </button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
+            <% end %>
+            <% end %>
             <% @article.sectionones.each do |sectionone| %>
                 <%= link_to like_article_sectionone_path(:article_id => @article.id, :id => sectionone.id), method: :put do %>
               <span class="glyphicon glyphicon-thumbs-up"></span>
@@ -75,20 +85,30 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          <h5>Comments</h5>
+          <h5><%= pluralize(@article.sectiontwos.count, "comment") %></h5>
         </a>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
         <div class="answerform">
+          <% if signed_in? %>
           <%= form_for([@article, @sectiontwo]) do |f| %>
           <%= f.text_area :contenttwo %>
             <button class="btn btn-success rightfloat" type="Submit">
               Create
             </button>
-            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
          <% end %>
+          <% else %>
+          <%= form_for([@article, @sectiontwo]) do |f| %>
+          <%= f.text_area :contenttwo %>
+          <button class="btn btn-success rightfloats" type="Submit"><%=
+              link_to "Create", new_session_path, :style => "color: #ffffff" %>
+            </button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
+            <% end %>
+            <% end %>
             <li><%= pluralize(@article.sectiontwos.count, "comment") %></li></br></br>
             <% @article.sectiontwos.each do |sectiontwo| %>
                 <%= link_to like_article_sectiontwo_path(:article_id => @article.id, :id => sectiontwo.id), method: :put do %>
@@ -121,20 +141,30 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-          <h5>Comments</h5>
+          <h5><%= pluralize(@article.sectionthrees.count, "comment") %></h5>
         </a>
       </h4>
     </div>
     <div id="collapseFour" class="panel-collapse collapse">
       <div class="panel-body">
         <div class="answerform">
+          <% if signed_in? %>
           <%= form_for([@article, @sectionthree]) do |f| %>
           <%= f.text_area :contentthree %>
             <button class="btn btn-success rightfloat" type="Submit">
               Create
             </button>
-            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
          <% end %>
+          <% else %>
+          <%= form_for([@article, @sectionthree]) do |f| %>
+          <%= f.text_area :contentthree %>
+          <button class="btn btn-success rightfloats" type="Submit"><%=
+              link_to "Create", new_session_path, :style => "color: #ffffff" %>
+            </button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
+            <% end %>
+            <% end %>
             <li><%= pluralize(@article.sectionthrees.count, "comment") %></li></br></br>
             <% @article.sectionthrees.each do |sectionthree| %>
                 <%= link_to like_article_sectionthree_path(:article_id => @article.id, :id => sectionthree.id), method: :put do %>
@@ -167,20 +197,30 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-          <h5>Comments</h5>
+          <h5><%= pluralize(@article.sectionfours.count, "comment") %></h5>
         </a>
       </h4>
     </div>
     <div id="collapseFive" class="panel-collapse collapse">
       <div class="panel-body">
         <div class="answerform">
+          <% if signed_in? %>
           <%= form_for([@article, @sectionfour]) do |f| %>
           <%= f.text_area :contentfour %>
             <button class="btn btn-success rightfloat" type="Submit">
               Create
             </button>
-            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
          <% end %>
+         <% else %>
+          <%= form_for([@article, @sectionfour]) do |f| %>
+          <%= f.text_area :contentfour %>
+          <button class="btn btn-success rightfloats" type="Submit"><%=
+              link_to "Create", new_session_path, :style => "color: #ffffff" %>
+            </button>
+            <button class="btn btn-danger rightfloatone" type="Submit"><%= link_to "File complaint?", "http://www.akosha.com/", :style => "color:#ffffff" %></button></br></br></br></br>
+            <% end %>
+            <% end %>
             <li><%= pluralize(@article.sectionfours.count, "comment") %></li></br></br>
             <% @article.sectionfours.each do |sectionfour| %>
                 <%= link_to like_article_sectionfour_path(:article_id => @article.id, :id => sectionfour.id), method: :put do %>
@@ -207,7 +247,7 @@
   </div>
 </div>
 <div id="relatedtoshowarticle">
-  <h2>ANSWER TO SCORE</h2>
+  <h2>RELATED ARTICLES</h2>
       <% @article.find_related_on_tags.find(:all, :limit =>5).each do |article| %>
       <p><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></br>
         <%= pluralize(article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count, "comment") %>

@@ -4,7 +4,7 @@
     <% @articles.find(:all, :limit => 1).each do |article| %>
         <div class="articlepostrial">
           <% article.tags.any? %>
-          <% article.tags.each do |tag| %>
+          <% article.tags.find(:all, :limit => 1).each do |tag| %>
           <h5 class="btn btn-danger tag"><%= link_to tag.name, tagged_url(:tag => tag.name) %></h5>
           <% end %>
           <h2><%= link_to image_tag("family.jpg", :alt => "clubmahindra"), article_path(:id => article.id) %></h2>
@@ -15,7 +15,7 @@
     <% @articles.find(:all, :limit => 2, :offset => 1).each do |article| %>
         <div class="articlepostrialtwo">
           <% article.tags.any? %>
-          <% article.tags.each do |tag| %>
+          <% article.tags.find(:all, :limit => 1).each do |tag| %>
           <h4 class="tagtwo"><%= link_to tag.name, tagged_url(:tag => tag.name) %></h4></br></br>
           <% end %>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
@@ -50,7 +50,7 @@
     <% @articles.find(:all, :limit => 2, :offset => 1).each do |article| %>
         <div class="articleposmiddle">
           <% article.tags.any? %>
-          <% article.tags.each do |tag| %>
+          <% article.tags.find(:all, :limit => 1).each do |tag| %>
           <h5 class="tagthree"><%= link_to tag.name, tagged_url(:tag => tag.name) %></h5></br></br>
           <% end %>
           <h3><%= link_to truncate(article.title, :length => 45), article_path(:id => article.id) %></h3>
@@ -77,9 +77,9 @@
            <%= form_for(@question) do |f| %>
             <h5><%= render 'shared/error_messages', object: f.object %></h5>
           <div class="homepageform">
-            <%= f.text_area :content, placeholder: "Compose new question...", class: "form-controlhome" %>
+            <%= f.text_area :content, placeholder: "Ask something relevant in 200 characters", class: "form-controlhome" %>
             <%= f.text_area :morecontent, placeholder: "Got more to add?", class: "form-controlhome" %></br>
-            <%= f.select :tag_list, options_for_select(["Auto", "Finance", "Online Shopping", "Telecom", "Technology", "Travel"]) %></br></br>
+            <%= f.text_field :tag_list, placeholder: "Sector, company involved", style: "width: 210px;" %></br>
             <%= f.submit "Post", class: "btn btn-success postbutton" %>
           </div>
     <% end %>
@@ -112,10 +112,10 @@
     <% @questions.find(:all, :limit => 12).each do |question| %>
         <div class="questionpostrial">
           <% question.tags.any? %>
-          <% question.tags.each do |tag| %>
+          <% question.tags.find(:all, :limit => 1).each do |tag| %>
           <h5 class="tagfour"><%= link_to tag.name, tagged_url(:tag => tag.name) %></h5></br></br>
           <% end %>
-          <h4><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %></h4>
+          <h4><%= link_to truncate(question.content, :length => 55), user_question_path(:email => question.user.id, :id => question.id) %></h4>
           <h6><%= truncate(question.morecontent, :length => 90) %></h6>
           <h3><%= time_ago_in_words(question.created_at) %> ago</h3>
         </div>

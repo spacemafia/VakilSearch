@@ -1,5 +1,6 @@
 class SurveysController < ApplicationController
   before_action :admin_user, only: [:index, :destroy]
+  before_action :signed_in_user, only: [:new]
 
   def index
     @surveys = Survey.all

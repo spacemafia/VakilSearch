@@ -64,9 +64,9 @@
 <div id="newanswers">
   <h3><%= @user.name %></h3>
   <h4><%= pluralize(@user.questions.count, "Questions") %>
-      <%= pluralize(@user.followed_questions.count, "Following") %></h4>
+      <%= pluralize(@user.followed_questions.count, "Followed Questions") %></h4>
   <h4><%= pluralize(@user.answers.count, "Answers") %>
-      <%= pluralize(@user.answers.sum(:cached_weighted_score) + @user.sectionones.sum(:cached_weighted_score) + @user.sectiontwos.sum(:cached_weighted_score) + @user.sectionthrees.sum(:cached_weighted_score) + @user.sectionfours.sum(:cached_weighted_score), "Score") %></h4>
+      <%= pluralize(@user.answers.sum(:cached_weighted_score) + @user.sectionones.sum(:cached_weighted_score) + @user.sectiontwos.sum(:cached_weighted_score) + @user.sectionthrees.sum(:cached_weighted_score) + @user.sectionfours.sum(:cached_weighted_score), "Total User Point") %></h4>
        <% @user.answers.any? %>
       <div class="topanswers">
         <h4>Top Answers</h4>

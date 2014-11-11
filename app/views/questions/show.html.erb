@@ -2,7 +2,7 @@
 <div class="showquestion">
 	<h5><%= link_to "Questions", questions_path, class: "btn btn-primary" %>
 	<% @question.tags.any? %>
-			<% @question.tags.each do |tag| %>
+			<% @question.tags.find(:all, :limit => 1).each do |tag| %>
 					<%= link_to tag.name, tagged_url(:tag => tag.name), class: "btn btn-primary" %></h5>
 						<% end %>
 			<div id="questionshow">
@@ -44,7 +44,7 @@
 		</div>
 
 <div id="relatedtoshowquestion">
-	<h2>ANSWER TO SCORE</h2>
+	<h2>RELATED QUESTIONS</h2>
 			<% @question.find_related_on_tags.find(:all, :limit =>5).each do |question| %>
 			<p><%= link_to truncate(question.content, :length => 50), user_question_path(:email => question.user.id, :id => question.id) %></br>
 				<%= pluralize(question.answers.count, "answer") %>
