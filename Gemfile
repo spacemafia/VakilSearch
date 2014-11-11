@@ -14,6 +14,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'jquery-turbolinks'
 gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate-bootstrap'
+gem "non-stupid-digest-assets"
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

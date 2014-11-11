@@ -88,7 +88,9 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
+    nokogiri (1.5.11)
     nokogiri (1.5.11-x86-mingw32)
+    non-stupid-digest-assets (1.0.4)
     paperclip (3.5.4)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -194,6 +196,7 @@ DEPENDENCIES
   jquery-rails (= 3.0.4)
   jquery-turbolinks
   masonry-rails (~> 0.2.0)
+  non-stupid-digest-assets
   paperclip (~> 3.0)
   pg (= 0.15.1)
   rails (= 4.0.8)
