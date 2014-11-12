@@ -47,7 +47,7 @@
 <div class="widthcontrollermiddle">
   <div id="latestarticlesmiddle">
     <div class="floattest">
-    <% @articles.find(:all, :limit => 2, :offset => 1).each do |article| %>
+    <% @articles.find(:all, :limit => 2, :offset => 3).each do |article| %>
         <div class="articleposmiddle">
           <% article.tags.any? %>
           <% article.tags.find(:all, :limit => 1).each do |tag| %>

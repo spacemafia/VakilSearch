@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111100802) do
+ActiveRecord::Schema.define(version: 20141112171802) do
 
   create_table "answers", force: true do |t|
-    t.string   "answer_content"
+    t.text     "answer_content"
     t.integer  "user_id"
     t.integer  "question_id"
     t.datetime "created_at"
@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(version: 20141111100802) do
   add_index "articles", ["user_id", "created_at"], name: "index_articles_on_user_id_and_created_at"
 
   create_table "questions", force: true do |t|
-    t.string   "content"
+    t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "morecontent"
+    t.text     "morecontent"
   end
 
   add_index "questions", ["user_id", "created_at"], name: "index_questions_on_user_id_and_created_at"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20141111100802) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
 
   create_table "sectionfours", force: true do |t|
-    t.string   "contentfour"
+    t.text     "contentfour"
     t.integer  "article_id"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20141111100802) do
   add_index "sectionfours", ["cached_weighted_total"], name: "index_sectionfours_on_cached_weighted_total"
 
   create_table "sectionones", force: true do |t|
-    t.string   "contentone"
+    t.text     "contentone"
     t.integer  "article_id"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20141111100802) do
   add_index "sectionones", ["cached_weighted_total"], name: "index_sectionones_on_cached_weighted_total"
 
   create_table "sectionthrees", force: true do |t|
-    t.string   "contentthree"
+    t.text     "contentthree"
     t.integer  "article_id"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 20141111100802) do
   add_index "sectionthrees", ["cached_weighted_total"], name: "index_sectionthrees_on_cached_weighted_total"
 
   create_table "sectiontwos", force: true do |t|
-    t.string   "contenttwo"
+    t.text     "contenttwo"
     t.integer  "article_id"
     t.integer  "user_id"
     t.datetime "created_at"
