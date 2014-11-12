@@ -25,12 +25,18 @@
     </div>
             <div id="latestquestions">
                 <h2>LATEST QUESTIONS</h2>
+                <% if @questions.any? %>
                 <% @questions.find(:all, :limit => 5).each do |question| %>
                 <div class="questionscontent">
                     <p><%= link_to truncate(question.content, :length => 50), user_question_path(:email => question.user.id, :id => question.id) %></p>
                         <h6><%= question.user.name %>
                         <%= pluralize(question.answers.count, "answers") %></h6>
                     </div>
+                <% end %>
+                <% else %>
+                <div class="noarticles">
+                    <h5>Nothing here yet</h5>
+                </div>
                 <% end %>
             </div>
 </div>

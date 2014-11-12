@@ -29,13 +29,18 @@
 
 <div id="articlequestionsindex">
     <h2>LATEST ARTICLES</h2>
+      <% if @articles.any? %>
       <% @articles.find(:all, :limit => 5).each do |article| %>
       <div class="latestarticles">
         <h5><%= link_to truncate(article.title, :length => 50), article_path(:id => article.id) %></h5>
         <p>Comments: <%= article.sectionones.count + article.sectiontwos.count + article.sectionthrees.count + article.sectionfours.count %>, Category: <%= article.tag_list %></p>
       </div>
        <% end %>
+       <% else %>
+      <div class="noarticles">
+         <h5>Nothing here yet</h5>
+      </div>
+       <% end %>
     </div>
-
 </div>
 <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>

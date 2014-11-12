@@ -43,6 +43,7 @@
 			<% end %>
 		</div>
 
+<% if Question.tagged_with(@question.tags).count > 1 %> 
 <div id="relatedtoshowquestion">
 	<h2>RELATED QUESTIONS</h2>
 			<% @question.find_related_on_tags.find(:all, :limit =>5).each do |question| %>
@@ -51,4 +52,5 @@
 				<%= time_ago_in_words(question.created_at) %> ago</p>
 			<% end %>
 </div>
+<% end %>
 </div>

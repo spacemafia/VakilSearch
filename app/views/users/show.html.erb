@@ -7,6 +7,7 @@
                   </ul>
                     <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
+                      <% if @questions.any? %>
                      <% @questions.each do |question| %>
                       <div id="userquestionindex">
                         <h3><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
@@ -31,9 +32,13 @@
                     <% end %>
                   </div>
                   <% end %>
+                  <% else %>
+                    <h3>Nothing asked yet</h3>
+                  <% end %>
                     </div>
 
                   <div class="tab-pane" id="tab2">
+                    <% if @followedquestions.any? %>
                      <% @followedquestions.each do |question| %>
                         <div id="userquestionindex">
                           <h3><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
@@ -51,12 +56,11 @@
                               <% end %>
                             <p>Created: 
                           <%= time_ago_in_words(question.created_at) %> ago,
-                          Answers: <%= question.answers.count %> 
-                         <% if current_user == @user %>
-                            <%= link_to 'Edit', edit_question_path(question) %>
-                            <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-                      <% end %>
+                          Answers: <%= question.answers.count %></p>
                     </div>
+                  <% end %>
+                    <% else %>
+                    <h3>Nothing followed yet</h3>
                   <% end %>
                   </div>
                   </div>
@@ -67,12 +71,13 @@
       <%= pluralize(@user.followed_questions.count, "Followed Questions") %></h4>
   <h4><%= pluralize(@user.answers.count, "Answers") %>
       <%= pluralize(@user.answers.sum(:cached_weighted_score) + @user.sectionones.sum(:cached_weighted_score) + @user.sectiontwos.sum(:cached_weighted_score) + @user.sectionthrees.sum(:cached_weighted_score) + @user.sectionfours.sum(:cached_weighted_score), "Total User Point") %></h4>
-       <% @user.answers.any? %>
+       <% if @user.answers.any? %>
       <div class="topanswers">
         <h4>Top Answers</h4>
         <% @user.answers.find(:all, :limit => 5).each do |answer| %>
         <p><%= link_to truncate(answer.answer_content, :length => 50), user_question_path(:email => answer.id, :id => answer.question_id) %>
           Score: <%= answer.cached_weighted_score %></p>
+        <% end %>
         <% end %>
       </div>
     </div>
