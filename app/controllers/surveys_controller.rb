@@ -9,6 +9,7 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -37,8 +38,7 @@ class SurveysController < ApplicationController
 
   private
     def survey_params
-      params.require(:survey).permit(:qone, :qtwo, :qthree, :qfour, :qfive,
-                                      :qsix, :qseven, :qeight)
+      params.require(:survey).permit(:qone, :qtwo, :qthree, :qfour, :qfive, :qsix, :qseven, :qeight)
     end
 
     def admin_user
