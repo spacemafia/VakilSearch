@@ -1,4 +1,5 @@
 class SectiontwosController < ApplicationController
+     before_action :signed_in_user, only: [:create, :upvote, :downvote]
     
   def index
     @article = Article.find(params[:article_id])

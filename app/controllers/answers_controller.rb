@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+   before_action :signed_in_user, only: [:create, :upvote, :downvote]
 
   def index
     @question = Question.find(params[:question_id])

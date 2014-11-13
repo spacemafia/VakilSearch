@@ -19,7 +19,7 @@
 	       			<%= link_to edit_question_path(@question) do %>
 	       			<span class="glyphicon glyphicon-edit"><span>
 	 		<% end %>
-	       			<%= link_to root_url, method: :delete,
+	       			<%= link_to @question, method: :delete,
                             data: { confirm: "You sure?" } do %>
           		<span class="glyphicon glyphicon-trash"></span>
 	 		<% end %>
