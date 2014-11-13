@@ -13,8 +13,8 @@
                         <h3><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
                             <% if @user == current_user %>
                             <% question.answers.find(:all, :limit => 1, :order => 'created_at DESC').each do |answer| %>
-                            <% if answer.created_at > @user.updated_at %>
-                            <span class="badge"><%= link_to "New Answers", user_question_path(:email => question.user.id, :id => question.id) %></span></h3>
+                            <% if answer.created_at > @user.updated_at - 24.hours %>
+                            <span class="badge"><%= link_to "Recent Answer", user_question_path(:email => question.user.id, :id => question.id) %></span></h3>
                             <% end %>
                             <% end %>
                             <% end %>
@@ -44,8 +44,8 @@
                           <h3><%= link_to question.content, user_question_path(:email => question.user.id, :id => question.id) %>
                               <% if @user == current_user %>
                               <% question.answers.find(:all, :limit => 1, :order => 'created_at DESC').each do |answer| %>
-                              <% if answer.created_at > @user.updated_at %>
-                              <span class="badge"><%= link_to "New Answers", user_question_path(:email => question.user.id, :id => question.id) %></span></h3>
+                              <% if answer.created_at > @user.updated_at - 24.hours %>
+                              <span class="badge"><%= link_to "Recent Answer", user_question_path(:email => question.user.id, :id => question.id) %></span></h3>
                               <% end %>
                               <% end %>
                               <% end %>
