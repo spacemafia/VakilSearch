@@ -3,26 +3,26 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
-$navbar-default-bg: #f8f8f8;
+$navbar-default-bg: #211C22;
 $navbar-default-border: none;
-$navbar-default-brand-color: #c0392b;
-$navbar-default-link-hover-color: #c0392b;
+$navbar-default-brand-color: white;
+$navbar-default-link-hover-color: #f1c40f;
 $font-family-sans-serif: 'Patua One', Helvetica, Arial, sans-serif;
 $navbar-height: 60px;
-$navbar-default-link-color: lighten(black, 35%);
+$navbar-default-link-color: #f1c40f;
 $body-bg: #ffffff;
 $btn-primary-bg: #f8f8f8;
 $btn-primary-color: #070502;
-$dropdown-link-hover-bg: #ecf0f1;
+$dropdown-link-hover-bg: #f1c40f;
 $headings-font-family: 'Patua One', sans-serif;
-$headings-color: #c0392b;
+$headings-color: #333333;
 $btn-primary-border: white;
 $nav-tabs-active-link-hover-bg: #2c3e50;
 $nav-tabs-border-color: none;
 $nav-tabs-active-link-hover-bg: #2c3e50;
 $nav-link-hover-bg: none;
 $nav-tabs-active-link-hover-border-color: none;
-$link-color: green;
+$link-color: #333333;
 $nav-tabs-active-link-hover-bg: none;
 $nav-tabs-active-link-hover-color: none;
 $text-color: #333333;
@@ -44,17 +44,23 @@ body
     padding-right: 33px;}
 
 .navbar-brand 
-    {
-      font-family-sans-serif: 'Lato';
-	   letter-spacing: -2px;
-	   font-size: 34px;
-	   margin-bottom: 5px;
+    {padding-top: 10px;
       position: relative;
       }
 
+.askmodal h4
+{color: #f1c40f;
+font-size: 15px;
+font-family: 'Patua One';
+padding-top: 3px;
+padding-right: 3px;}
+
 .navbar-default
 { border-radius: 0px;
-  box-shadow: 0px 0px 2px rgba(34,34,34,0.6);
+border-bottom-style: solid;
+border-bottom-color: #f1c40f;
+border-bottom-width: 1px;
+  box-shadow: 0px 0px 4px rgba(34,34,34,0.1);
 }
 
 /* latest */
@@ -186,9 +192,11 @@ body
 
   footer {
   overflow: hidden;
-  margin-top: 250px;
-  border-top: 1px solid #eaeaea;
-  color: #f8f8f8;
+  margin-top: 150px;
+  border-top: 1px solid #f1c40f;
+  color: white;
+  background-color: #211C22;
+  padding-top: 7px;
 }
 
 footer a {
@@ -196,7 +204,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #222;
+  color: white;
 }
 
 footer small {
@@ -215,13 +223,19 @@ footer small {
   overflow: hidden;
     width: 300px;
     float: right;
-}
+    }
 
 footer ul li {
   list-style: none;
   display: inline;
   margin-left: 10px;
-}
+  }
+
+.navbar-brand-footer 
+    {padding-top: 10px;
+      position: relative;
+      margin-left: 100px;
+      }
 
   @media screen and (max-width: 400px) {
    #footerleft { 

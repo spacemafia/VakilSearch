@@ -27,18 +27,13 @@
     <form role="formtrial">
      <div class="form-grouptrial">
       <h4><span class="glyphicon glyphicon-pushpin"></span>
-        CONSUMER COMPLAINTS</h4>
-      <h5>10 lakh filed <span class="colourbar">|</span> 61% resolved</h5>
-         <input type="name" class="form-controltrial" id="complaintformtrial" placeholder="Which brand have you a complaint against?">
-          <h5><%= link_to "File now!", "http://www.akosha.com", class: "btn btn-primary morebutton" %></h5>
-          <h5>350+ brands active on Akosha</h5>
+        Affordable Legal Services</h4>
+      <input type="name" class="form-controltrial" id="complaintformtrial" placeholder="What legal assistance do you need?">
+      <h5><%= link_to "Incorporation", "http://www.vakilsearch.com/company-registration-private-limited-company-india" %> <span class="colourbar">|</span><%= link_to "Documentation", "http://www.vakilsearch.com/company-registration-private-limited-company-india" %> <span class="colourbar">|</span> <%= link_to "RTI", "http://www.vakilsearch.com/file-an-rti-application-online" %> <span class="colourbar">|</span> <%= link_to "Licenses", "http://www.vakilsearch.com/company-registration-private-limited-company-india" %> <span class="colourbar">|</span><%= link_to "Tax Filing", "http://www.vakilsearch.com/company-registration-private-limited-company-india" %> <span class="colourbar">|</span> <%= link_to "Auditing", "http://www.vakilsearch.com/company-registration-private-limited-company-india" %> </h5>
+         <h5><%= link_to "Instant legal help", "http://www.vakilsearch.com", class: "btn btn-primary morebutton" %></h5>
+          <h5>120,000+ happy customers</h5>
           <ul class="brandlist">
-          <li><%= image_tag("aircel.jpg", :alt => "Aircel") %></li>
-          <li><%= image_tag("groupon.jpg", :alt => "Groupon") %></li>
-          <li><%= image_tag("voltas.jpg", :alt => "Voltas") %></li>
-          <li><%= image_tag("makemytrip.jpg", :alt => "makemytrip") %></li>
-          <li><%= image_tag("micromax.jpg", :alt => "Micromax") %></li>
-          <li><%= image_tag("snapdeal.jpg", :alt => "Snapdeal") %></li>
+          <li><%= image_tag("logos.jpg", :alt => "Companies") %></li>
         </ul>
      </div>
     </form>
@@ -71,15 +66,15 @@
   <div id="complaintmiddle">
          <% if signed_in? %>
       <h3><span class="glyphicon glyphicon-plus-sign"></span>
-        ASK A QUESTION</h3></br>
+        Vakilsearch Professional Forum</h3>
            <h6><%= render 'shared/user_info' %> following 
            <%= pluralize(User.find_by(:id => current_user.id).answers.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionones.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectiontwos.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionthrees.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionfours.sum(:cached_weighted_score), "Total User Point") %></h6>
            <%= form_for(@question) do |f| %>
             <h5><%= render 'shared/error_messages', object: f.object %></h5>
           <div class="homepageform">
-            <%= f.text_area :content, placeholder: "Ask something relevant in 200 characters", class: "form-controlhome" %>
+            <%= f.text_area :content, placeholder: "Query a wide network of lawyers, CAs and entrepreneurs", class: "form-controlhome" %>
             <%= f.text_area :morecontent, placeholder: "Got more to add?", class: "form-controlhome" %></br>
-            <%= f.text_field :tag_list, placeholder: "Sector or company involved", style: "width: 210px;" %></br>
+            <%= f.text_field :tag_list, placeholder: "Sector", style: "width: 210px;" %></br>
             <%= f.submit "Post", class: "btn btn-success postbutton" %>
           </div>
     <% end %>
@@ -89,7 +84,7 @@
     <% else %>
    <div class="Community-Support">
       <h4><span class="glyphicon glyphicon-bullhorn"></span>
-        COMMUNITY SUPPORT
+        Join our Network
         </h4>
        <h5>7,221 Questions <span class="colourbar">|</span> 23,572 Answers</h5>
         <%= form_for(:session, url: sessions_path) do |f| %>
@@ -98,7 +93,7 @@
         <%= f.text_field :email, class: "form-controlhome" %></br>
         <%= f.label :password, class: "form-controlhome" %></br>
         <%= f.password_field :password, class: "form-controlhome" %>
-        <%= f.submit "Sign in", class: "btn btn-success" %>
+        <%= f.submit "Sign in", class: "btn btn-success colorchange" %>
       </div>
     <% end %></br>
         <h6><%= link_to "Not a member? Sign up", signup_path %> </h6>
@@ -107,7 +102,7 @@
       <% end %>
 </div>
 <div class="widthcontrollerbottom">
-  <h4><%= link_to "Latest Questions", questions_path, class: "btn btn-primary questionbutton" %></h4>
+  <h4><%= link_to "Latest Queries", questions_path, class: "btn btn-primary questionbutton" %></h4>
   <div id="latestquestionstrial">
     <% @questions.find(:all, :limit => 12).each do |question| %>
         <div class="questionpostrial">

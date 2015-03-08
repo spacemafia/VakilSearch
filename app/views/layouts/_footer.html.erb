@@ -1,12 +1,11 @@
 <footer class="footer">
   <small id="footerleft">
-    <p><%= link_to "Consumer Tadka", root_url %></p>
-    <h5>A Consumer Forum</h5>
+    <%= link_to image_tag("logo.jpg", :alt => "Vakil Search"), root_path, class: "navbar-brand-footer" %>
   </small>
   <nav id="footerright">
     <ul>
-      <li><%= link_to "Questions", questions_path %></li>
-      <li><%= link_to "Articles", articles_path %></li>
+      <li><%= link_to "CONTACT", questions_path %></li>
+      <li><%= link_to "ABOUT US", articles_path %></li>
     </ul>
   </nav>
 </footer>

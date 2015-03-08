@@ -4,7 +4,7 @@
     <h1>Sign up</h1>
     <%= form_for(User.new) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :name %></br>
+      <%= f.label :name_and_profession %></br>
       <%= f.text_field :name %></br>
 
       <%= f.label :email %></br>
