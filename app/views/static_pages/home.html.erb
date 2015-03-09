@@ -66,7 +66,7 @@
   <div id="complaintmiddle">
          <% if signed_in? %>
       <h3><span class="glyphicon glyphicon-plus-sign"></span>
-        Vakilsearch Professional Forum</h3>
+        Ideas / Solutions / Impact</h3>
            <h6><%= render 'shared/user_info' %> following 
            <%= pluralize(User.find_by(:id => current_user.id).answers.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionones.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectiontwos.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionthrees.sum(:cached_weighted_score) + User.find_by(:id => current_user.id).sectionfours.sum(:cached_weighted_score), "Total User Point") %></h6>
            <%= form_for(@question) do |f| %>
@@ -84,9 +84,9 @@
     <% else %>
    <div class="Community-Support">
       <h4><span class="glyphicon glyphicon-bullhorn"></span>
-        Join our Network
+        Expert Advice Exchange
         </h4>
-       <h5>7,221 Questions <span class="colourbar">|</span> 23,572 Answers</h5>
+       <h5>7,221 Queries <span class="colourbar">|</span> 23,572 Insights</h5>
         <%= form_for(:session, url: sessions_path) do |f| %>
         <div class="homepageformtwo">
         <%= f.label :email, class: "form-controlhome" %></br>
@@ -97,6 +97,7 @@
       </div>
     <% end %></br>
         <h6><%= link_to "Not a member? Sign up", signup_path %> </h6>
+        <h6><%= link_to "1000s of professionals already have", signup_path %> </h6>
    </div>
   </div>
       <% end %>
