@@ -1,7 +1,22 @@
-@import url(http://fonts.googleapis.com/css?family=Patua+One);
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-@import url(http://fonts.googleapis.com/css?family=Lobster);
+@font-face {
+        font-family: "Patua One";
+        src: url(/assets/PatuaOne-Regular.ttf) format("truetype");
+    }
+
+@font-face {
+        font-family: "Lato";
+        src: url(/assets/Lato-Regular.ttf) format("truetype");
+    }
+
+@font-face {
+        font-family: "Lobster";
+        src: url(/assets/Lobster1.4.otf) format("truetype");
+    }
+
+@font-face {
+        font-family: "Open Sans";
+        src: url(/assets/OpenSans-Regular.ttf) format("truetype");
+    }
 
 $navbar-default-bg: #211C22;
 $navbar-default-border: none;
